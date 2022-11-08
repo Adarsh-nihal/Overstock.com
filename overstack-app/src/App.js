@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './Component/Navbar';
+import Mugs from './Component/Mugs';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Mugs />
     </div>
   );
 }
