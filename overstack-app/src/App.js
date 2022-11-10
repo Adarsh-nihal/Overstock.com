@@ -5,15 +5,18 @@ import MainRoutes from './Component/MainRoutes';
 import CookiesCutter from './Component/CookiesCutter';
 import Mixtures from './Component/Mixtures';
 import Fryers from './Component/Fryers';
+import Navbar from './Component/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <MainRoutes />
+      
+      <Navbar />
+      {/* <MainRoutes />
       <Mugs />
       <CookiesCutter/>
       <Mixtures />
-      <Fryers />
+      <Fryers /> */}
     </div>
   );
 }
