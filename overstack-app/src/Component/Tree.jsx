@@ -11,14 +11,14 @@ import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 
 
-const  Mixtures = () => {
+const  Tree = () => {
 const [page,setPage]=useState(1)
 const location=useLocation()
 const [searchParams]=useSearchParams()
 const [color,setColor]=useState(false)
 
 
-  let url = `http://localhost:8080/mixers?_limit=12&_page=${page}`;
+  let url = `http://localhost:8080/tree?_limit=12&_page=${page}`;
 
   const { loading, error, data,setData } = useFetch(url,page,location);
 
@@ -28,7 +28,7 @@ const handleChange=(e)=>{
 
  const {value}=e.target
 
- axios.get("http://localhost:8080/mixers",{
+ axios.get("http://localhost:8080/tree",{
   params: {
     _page:page,
     _limit:12,
@@ -57,7 +57,7 @@ const handleHeart=(id)=>{
   return (
     <div className='Container'>
        
-        <h1>Kitchen Mixters</h1> 
+        <h1>Tree Skirts</h1> 
         <div className="SearchBy">
            <label>SortBy:</label>
           <select  onChange={handleChange} style={{width:"16%",border:"1px solid black",marginLeft:"15px"}}>
@@ -82,7 +82,7 @@ const handleHeart=(id)=>{
                     <span>Featured</span>
                     <div style={{display:"flex"}} ><h1>${item.price}</h1>
                   
-                  <Link to={`/mixers/${item.id}`}>  <span  className='icon'><ChevronDownIcon/>More details</span></Link>
+                  <Link to={`/tree/${item.id}`}>  <span  className='icon'><ChevronDownIcon/>More details</span></Link>
                     </div>
                     { item.count==2 && <div style={{display:"flex",marginLeft:"10px"}}><img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" /> <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" /></div>}
                     { item.count==3 && <div style={{display:"flex",marginLeft:"10px"}}><img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" /> <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" /><img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" /></div>}
@@ -105,4 +105,4 @@ const handleHeart=(id)=>{
   )
 }
 
-export default Mixtures
+export default Tree

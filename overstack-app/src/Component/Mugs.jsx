@@ -1,27 +1,24 @@
 
 import React, { useEffect, useState } from 'react'
 import "./Mugs.css"
-import {ChevronDownIcon,CheckCircleIcon} from "@chakra-ui/icons"
+import {ChevronDownIcon,CheckCircleIcon,ChevronRightIcon,ChevronLeftIcon} from "@chakra-ui/icons"
 import { Button,Spinner } from '@chakra-ui/react'
 import { useFetch } from './UseFetch'
-import {Link, useLocation} from "react-router-dom"
+import {Link, useLocation, useSearchParams} from "react-router-dom"
 import axios from 'axios'
-import { useSearchParams } from "react-router-dom";
 import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
+
+
+
 const Mugs = () => {
 const [page,setPage]=useState(1)
-const location=useLocation()
-const [searchParams]=useSearchParams()
 const [color,setColor]=useState(false)
 
 
   let url = `http://localhost:8080/mugs?_limit=12&_page=${page}`;
 
-  const { loading, error, data,setData } = useFetch(url,page,location);
-
-
-
+  const { loading, error, data,setData } = useFetch(url,page)
 const handleChange=(e)=>{
 
  const {value}=e.target
@@ -95,9 +92,9 @@ const handleHeart=(id)=>{
         </div >
         
     { data.length>0 && <div style={{margin:"auto",marginTop:"50px",marginBottom:"50px"}}>
-          <Button  mr="20px" borderRadius="20px" bg="skyblue" disabled={page === 1} onClick={() => handlePageChange(-1)}>prev</Button>
+          <Button  mr="20px" borderRadius="20px" bg="skyblue" disabled={page === 1} onClick={() => handlePageChange(-1)}><ChevronLeftIcon/></Button>
      {page}
-      <Button disabled={page === 5} ml="20px" borderRadius="20px" bg="skyblue"  onClick={() => handlePageChange(1)}>next</Button>
+      <Button disabled={page === 5} ml="20px" borderRadius="20px" bg="skyblue"  onClick={() => handlePageChange(1)}><ChevronRightIcon /></Button>
       </div> }
     </div>
   )
