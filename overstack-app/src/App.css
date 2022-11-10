@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+.resp-nav{
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .main-nav{
+    display: none;
+  } 
+  .resp-nav{
+    display: block;
+    position:sticky;
+    top:auto;
+  }
+
+
+}
