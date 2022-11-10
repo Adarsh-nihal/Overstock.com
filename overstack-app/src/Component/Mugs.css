@@ -1,7 +1,11 @@
 .Container{
    width:95%;
    margin:auto;
-   margin-top: 50px;;
+   margin-top: 130px;;
+   /* position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 2; */
 }
 .Container>h1{
    color: #2f3337;
@@ -21,12 +25,15 @@
  gap:20px;
  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
  color:#444;
+ 
+
 
 }
 .MugsData>div{
    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
 }
+
 .Mugs>span{
    font-weight: 700;
    font-size: 15px;
@@ -51,6 +58,8 @@
 }
 .icon{
    margin-left: 70px;
+ font-size: 16px;
+
 }
 .icon:hover{
    cursor: pointer;
@@ -67,7 +76,7 @@
 
 .Single{
    margin:auto;
-   margin-top: 100px;
+   margin-top: 140px;
    width:80%;
    display:flex;
    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

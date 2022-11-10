@@ -1,11 +1,40 @@
+import axios from "axios"
 import React from "react"
-// import {Link } from "react-router-dom"
+import {Link } from "react-router-dom"
 import "./navbar.css"
 
 
 
 export default function Navbar(){
+
+const [query,setQuery]=React.useState("")
+const [data,setData]=React.useState([])
+
+
+const handleFilter=(e)=>{
+    setQuery(e.target.value)
+    // console.log(query)
+}
+console.log(data)
+React.useEffect(()=>{
+
+    if(query){
+    axios.get("http://localhost:8080/mugs",{
+        params: {
+            q:query
+    }})
+    .then((r)=>{
+        setData(r.data)
+    }).catch((e)=>{
+        console.log(e)
+    })
+}
+},[query])
+
+
+
   return (
+    <div>
     <div className="header">
     <div>
         <div
@@ -27,7 +56,7 @@ export default function Navbar(){
         </div>
         <div className="class-input">
             <div>
-                <input type="text" placeholder="Search" />
+                <input value={query} onChange={handleFilter} type="text"  placeholder="Search" />
             </div>
             <div>
                 <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
@@ -83,43 +112,31 @@ export default function Navbar(){
     </div>
     <div className="section-div">
         <div>
-            <a href="">Furniture</a>
+            <Link to="mug">Mugs</Link>
         </div>
         <div>
-            <a href="">Rugs</a>
+            <Link to="cookingCutters">Cooking Cutters</Link>
         </div>
         <div>
-            <a href="">Decor</a>
+            <Link to="fryer">Air Fryers</Link>
         </div>
         <div>
-            <a href="">Bed & Bath</a>
+            <Link to="mixers">Mixers</Link>
         </div>
         <div>
-            <a href="">Home Improvement</a>
+            <Link to="lamps">Lamps</Link>
         </div>
         <div>
-            <a href="" >Kitchen</a>
+            <Link to="towels" >Towels</Link>
         </div>
         <div>
-            <a href="">Outdoor</a>
+            <Link to="blankets">Blankets</Link>
         </div>
         <div>
-            <a href="">Jewelry</a>
+            <Link to="tree">Tree Skirts</Link>
         </div>
         <div>
-            <a href="">Lighting</a>
-        </div>
-        <div>
-            <a href="">Kids & Baby</a>
-        </div>
-        <div>
-            <a href="">More</a>
-        </div>
-        <div>
-            <a href="">Holiday & Gifts</a>
-        </div>
-        <div>
-            <a href="">Sales & Deals</a>
+            <Link to="garland">Garlands</Link>
         </div>
     </div>
     <div className="dropdown-content-main dropdown-content-part">
@@ -209,6 +226,12 @@ export default function Navbar(){
                     </div>
                 </div>
             </div>
+           
+
+        </div>
+        {/* {data.length>0 && <div style={{width:"70%", position:"absolute",left:"20%",height:"500px",margin:"auto",backgroundColor:"red",border:"1px solid red"}} >
+
+</div>} */}
         </div>
   )
 }

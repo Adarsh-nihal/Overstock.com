@@ -6,12 +6,12 @@ import {FiHeart } from 'react-icons/fi'
 import {MdAddShoppingCart } from 'react-icons/md'
 
 import axios from 'axios';
-const  FreyersSingle = () => {
+const  BlanketSingle = () => {
     const {id}=useParams()
     console.log(id)
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/fryers/${id}`)
+      axios.get(`http://localhost:8080/blankets/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })
@@ -41,4 +41,4 @@ const  FreyersSingle = () => {
   };
 
 
-export default FreyersSingle
+export default BlanketSingle
