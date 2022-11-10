@@ -18,19 +18,21 @@ import MainRoutes from './Component/MainRoutes';
 import CookiesCutter from './Component/CookiesCutter';
 import Mixtures from './Component/Mixtures';
 import Fryers from './Component/Fryers';
+import ListPage from './Pages/ListPage';
 
 
 function App() {
   return (
     <div className="App">
-
+      {/* <Navbar/> */}
       <LoginPage/>
+      {/* <ListPage/> */}
 
-    <MainRoutes />
+    {/* <MainRoutes />
       <Mugs />
       <CookiesCutter/>
       <Mixtures />
-      <Fryers />
+      <Fryers /> */}
 
 
     </div>
