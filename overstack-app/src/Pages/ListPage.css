@@ -1,0 +1,6 @@
+.listpage_one{
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}

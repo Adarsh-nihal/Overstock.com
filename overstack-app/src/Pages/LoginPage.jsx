@@ -1,19 +1,52 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import  axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
+import { createBrowserHistory } from "@remix-run/router";
 const LoginPage = () => {
   const [semail,setSemail] = useState('');
   const [spass,setSpass] = useState("");
   const [scpass,setScpass] = useState('');
   const [lpass,setLpass] = useState('');
   const [lemail,setLemail] = useState('');
+  const dispatch = useDispatch();
+  const user = useSelector((res)=>res.user)
+  const history = createBrowserHistory()
+  if(user ){
+    console.log(user,"sdafio");
+  }
+  // useEffect(()=>{
+  //   if(user){
+  //      history.push('/');
+  //   }
+  // },[user,history])
+  const handleSignout = () =>{
+    console.log('signout');
+    dispatch(logoutInitiate())
+  }
+
   const handleSignin = ()=>{
+    
     if(lpass && lemail){
-      axios.post("https://reqres.in/api/login",{
-        email:lemail,
-        password:lpass
-      }).then((res)=>{console.log(res)}).catch((er)=>console.log(er));
+      dispatch(loginInitiate(lemail,lpass));
+    }else{
+      return;
     }
+    setLpass('');
+    setLemail('');
+  }
+
+  const handleRegister = () =>{
+    console.log("clicked");
+    if(scpass !== spass || !spass ){
+      alert("passwords are not matching");
+      return;
+    }
+    dispatch(registerInitiate(semail,spass));
+    setScpass("");
+    setSpass('');
+    setSemail('')
   }
   return (
     <div className="signup_signin">
@@ -41,7 +74,7 @@ const LoginPage = () => {
               delivered right to your inbox**
             </p>
           </div>
-          <button>Create Account</button>
+          <button onClick={handleRegister}>Create Account</button>
         </div>
         <div className="signup_seven">
         <button>Continue as Guest</button>
@@ -62,6 +95,7 @@ const LoginPage = () => {
           </a>
         </div>
       </div>
+      <button onClick={handleSignout}>Signout</button>
     </div>
   );
 };
