@@ -2,10 +2,7 @@
    width:95%;
    margin:auto;
    margin-top: 130px;;
-   /* position: absolute;
-   top: 0;
-   left: 0;
-   z-index: 2; */
+   
 }
 .Container>h1{
    color: #2f3337;
@@ -25,7 +22,6 @@
  gap:20px;
  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
  color:#444;
- 
 
 
 }

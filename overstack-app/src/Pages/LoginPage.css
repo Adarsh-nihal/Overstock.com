@@ -1,6 +1,7 @@
 .signup_signin{
     width: 60%;
     margin: auto;
+    margin-top: 130px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     

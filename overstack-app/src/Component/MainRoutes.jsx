@@ -18,19 +18,20 @@ import Towels from './Towels';
 import Blankets from './Blankets';
 import Tree from './Tree';
 import Garland from './Garland';
+import LoginPage from '../Pages/LoginPage';
 const MainRoutes = () => {
   return (
     <Routes>
 
-      <Route path="mug" element={<Mugs />} />
-      <Route path="cookingCutters" element={<CookiesCutter />} />
-      <Route path="mixers" element={<Mixtures />} />
-      <Route path="fryer" element={<Fryers />} />
-      <Route path="lamps" element={<Lamps />} />
-      <Route path="towels" element={<Towels />} />
-      <Route path="blankets" element={<Blankets />} />
-      <Route path="tree" element={<Tree />}></Route>
-      <Route path="garland" element={<Garland />} />
+      <Route path="/mug" element={<Mugs />} />
+      <Route path="/cookingCutters" element={<CookiesCutter />} />
+      <Route path="/mixers" element={<Mixtures />} />
+      <Route path="/fryer" element={<Fryers />} />
+      <Route path="/lamps" element={<Lamps />} />
+      <Route path="/towels" element={<Towels />} />
+      <Route path="/blankets" element={<Blankets />} />
+      <Route path="/tree" element={<Tree />}></Route>
+      <Route path="/garland" element={<Garland />} />
        <Route path="/mugs/:id" element={<MugsSingle />} />
        <Route path="/cookingCutters/:id" element={<CookiesSingle />} />
        <Route path="/mixers/:id" element={<MixturesSingle />} />
@@ -40,6 +41,9 @@ const MainRoutes = () => {
        <Route path="/blankets/:id" element={<BlanketSingle />} />
        <Route path="/tree/:id" element={<TreeSingle />} />
        <Route path="/garland/:id" element={<GarlandSingle />} />
+       <Route path="/login" element={<LoginPage />} />
+
+
     </Routes>
   )
 }

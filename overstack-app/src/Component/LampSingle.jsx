@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams } from "react-router-dom";
+import {useParams,Link } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Button, Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
@@ -32,7 +32,7 @@ const LampSingle = () => {
         <div className='shop'><h3> <CheckCircleIcon/>Free Shipping</h3></div>
 
         <div className='btn'>
-          <Button>Go Back</Button>
+        <Link to="/lamps"><Button bg="grey">Go Back</Button></Link> 
           <Button ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
