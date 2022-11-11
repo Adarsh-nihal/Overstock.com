@@ -50,6 +50,25 @@ const userLogutFailure = () =>{
         type:types.USER_LOGOUT_FAILURE
     }
 }
+
+const adminLoginRquest =  () =>{
+    return{
+        type:types.ADMIN_LOGIN_REQUEST
+    }
+}
+
+const adminLoginSuccess = (payload) =>{
+    return {
+        type:types.ADMIN_LOGIN_SUCCESS,
+        payload
+    }
+}
+
+const adminLoginFailure = () =>{
+    return{
+        typep:types.ADMIN_LOGIN_FAILURE
+    }
+}
 const registerInitiate = (email,password) =>{
         return function (dispatch){
             dispatch(registerRequest());
@@ -85,4 +104,4 @@ const logoutInitiate = () =>{
     }
 }
 
-export {registerInitiate,loginInitiate,logoutInitiate};
+export {registerInitiate,loginInitiate,logoutInitiate,adminLoginSuccess};

@@ -3,6 +3,7 @@ import * as types from "./actionType";
 import React from 'react'
 const inState = {
     user:'',
+    isAdmin:false,
     isAuth:false,
     isAuthLoading:false,
     isAuthError:false
@@ -56,6 +57,7 @@ const reducer = (state = inState,action) => {
         return{
             ...state,
             user:'',
+            isAdmin:false,
             isAuth:false
         }
     case types.USER_LOGOUT_FAILURE:
@@ -64,6 +66,23 @@ const reducer = (state = inState,action) => {
             isAuthError:true,
             isAuthLoading:false
         }
+    case types.ADMIN_LOGIN_REQUEST:
+        return{
+            ...state,
+            isAdmin:false
+        }
+    case types.ADMIN_LOGIN_SUCCESS:
+        return{
+            ...state,
+            isAuth:true,
+            isAdmin:true
+        }
+    case types.ADMIN_LOGIN_FAILURE:
+        return{
+            ...state,
+            isAdmin:false
+        }
+    
     default:
         return state
   }
