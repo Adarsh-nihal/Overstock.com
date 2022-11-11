@@ -40,11 +40,29 @@
   display: none;
 }
 
+.low-banner {
+  position: relative;
+  width: 100%;
+  min-width: 800px;
+  height: 400px;
+
+  /* background-image: url(./image/low-banner.jpg); */
+  text-align: center;
+  overflow: hidden;
+  background-image: url();
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+
 @media (max-width: 900px) {
   .main-nav{
     display: none;
   } 
   .resp-nav{
+    z-index: 10;
     display: block;
     position:sticky;
     top:auto;

@@ -8,6 +8,8 @@ import Mixtures from "./Component/Mixtures";
 import Fryers from "./Component/Fryers";
 import ListPage from "./Pages/ListPage";
 import RespNav from "./Component/Navbar/respnav";
+import { Footer } from "./Component/footer";
+import { Home } from "./Component/home/Home";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <div className="resp-nav">
         <RespNav/>
       </div>
+      <Home/>
       <LoginPage />
       <ListPage />
       <MainRoutes />
@@ -25,6 +28,7 @@ function App() {
       <CookiesCutter />
       <Mixtures />
       <Fryers />
+      <Footer/>
     </div>
   );
 }
