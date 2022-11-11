@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import  axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
+import { adminLoginSuccess, loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
 import { createBrowserHistory } from "@remix-run/router";
 const LoginPage = () => {
   const [semail,setSemail] = useState('');
@@ -12,6 +12,7 @@ const LoginPage = () => {
   const [lemail,setLemail] = useState('');
   const dispatch = useDispatch();
   const user = useSelector((res)=>res.user)
+  const isAuth = useSelector((res)=>res.isAuth)
   const history = createBrowserHistory()
   if(user ){
     console.log(user,"sdafio");
@@ -29,16 +30,20 @@ const LoginPage = () => {
   const handleSignin = ()=>{
     
     if(lpass && lemail){
-      dispatch(loginInitiate(lemail,lpass));
-    }else{
-      return;
+      if(lemail === "admin@ostack.org" && lpass === "admin@321"){
+        dispatch(adminLoginSuccess("Admin"))
+      }else if(lpass){
+        dispatch(loginInitiate(lemail,lpass))
+      }else{
+        return;
+      }
+
     }
     setLpass('');
     setLemail('');
   }
 
   const handleRegister = () =>{
-    console.log("clicked");
     if(scpass !== spass || !spass ){
       alert("passwords are not matching");
       return;
@@ -49,8 +54,9 @@ const LoginPage = () => {
     setSemail('')
   }
   return (
-    <div className="signup_signin">
-      <div className="signup_one">
+    <>
+      {!isAuth && <div className="signup_signin"> 
+        <div className="signup_one">
         <h3>Create Account</h3>
         <div className="signup_two">
           <div className="signup_two1">
@@ -95,8 +101,12 @@ const LoginPage = () => {
           </a>
         </div>
       </div>
-      <button onClick={handleSignout}>Signout</button>
-    </div>
+      </div> }
+      {isAuth && <div className="use_signout"> 
+        <div>userID:{user}</div>
+        <button className="use_signout_btn" onClick={handleSignout}>Signout</button>
+        </div> }
+    </>
   );
 };
 
