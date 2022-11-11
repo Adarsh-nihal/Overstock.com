@@ -98,7 +98,7 @@ const handleHeart=(id)=>{
         { data.length>0 && <div style={{margin:"auto",marginTop:"50px",marginBottom:"50px"}}>
           <Button  mr="20px" borderRadius="20px" bg="skyblue" disabled={page === 1} onClick={() => handlePageChange(-1)}><ChevronLeftIcon/></Button>
      {page}
-      <Button disabled={page === 5} ml="20px" borderRadius="20px" bg="skyblue"  onClick={() => handlePageChange(1)}><ChevronRightIcon /></Button>
+      <Button disabled={page === 2} ml="20px" borderRadius="20px" bg="skyblue"  onClick={() => handlePageChange(1)}><ChevronRightIcon /></Button>
       </div> }
     </div>
   )

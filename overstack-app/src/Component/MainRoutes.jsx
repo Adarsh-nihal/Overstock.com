@@ -22,15 +22,15 @@ const MainRoutes = () => {
   return (
     <Routes>
 
-      <Route path="mug" element={<Mugs />} />
-      <Route path="cookingCutters" element={<CookiesCutter />} />
-      <Route path="mixers" element={<Mixtures />} />
-      <Route path="fryer" element={<Fryers />} />
-      <Route path="lamps" element={<Lamps />} />
-      <Route path="towels" element={<Towels />} />
-      <Route path="blankets" element={<Blankets />} />
-      <Route path="tree" element={<Tree />}></Route>
-      <Route path="garland" element={<Garland />} />
+      <Route path="/mug" element={<Mugs />} />
+      <Route path="/cookingCutters" element={<CookiesCutter />} />
+      <Route path="/mixers" element={<Mixtures />} />
+      <Route path="/fryer" element={<Fryers />} />
+      <Route path="/lamps" element={<Lamps />} />
+      <Route path="/towels" element={<Towels />} />
+      <Route path="/blankets" element={<Blankets />} />
+      <Route path="/tree" element={<Tree />}></Route>
+      <Route path="/garland" element={<Garland />} />
        <Route path="/mugs/:id" element={<MugsSingle />} />
        <Route path="/cookingCutters/:id" element={<CookiesSingle />} />
        <Route path="/mixers/:id" element={<MixturesSingle />} />
