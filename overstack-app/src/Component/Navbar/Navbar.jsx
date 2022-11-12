@@ -44,11 +44,11 @@ export default function Navbar() {
               window.location.href = "/";
             }}
           >
-            <img
+           <Link to="/"> <img
               className="overstockIndex"
               src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
               alt=""
-            />
+            /></Link>
           </div>
           <div className="class-input">
             <div>
@@ -64,10 +64,10 @@ export default function Navbar() {
             </div>
           </div>
           <div id="account1" className="class-account class-account-common">
-            <a href="/login">
+            <Link to="/login">
               {" "}
               <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
-            </a>
+            </Link>
             {/* <div onclick="window.location.href='signup.html'">Account</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="class-account class-account-common">
             <div>
-              <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
+             <Link to="/list"> <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" /></Link> 
             </div>
             {/* <div>Lists</div> */}
             <div className="chevronup">

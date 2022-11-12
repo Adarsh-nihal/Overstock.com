@@ -16,6 +16,8 @@ const MugsSingle = () => {
        .catch((error)=>console.log(error))
     },[])
    
+
+
  
 const handleCart=()=>{
   saveData("Cart",item)

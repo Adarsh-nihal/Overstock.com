@@ -3,7 +3,8 @@ import './App.css';
 import Navbar from "./Component/Navbar/Navbar"
 import MainRoutes from './Component/MainRoutes';
 import { Home } from './Component/home/Home';
-
+import RespNav from './Component/Navbar/respnav';
+import { Footer } from './Component/footer';
 
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
     <div className="App">
       
       <Navbar />
-      <Home />
       <MainRoutes />
+      <Footer/>
  </div>
 
   );

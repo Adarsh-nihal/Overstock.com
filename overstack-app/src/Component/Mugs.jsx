@@ -13,7 +13,6 @@ import {FiHeart } from 'react-icons/fi'
 
 const Mugs = () => {
 const [page,setPage]=useState(1)
-const [color,setColor]=useState(false)
 
 
   let url = `http://localhost:8080/mugs?_limit=12&_page=${page}`;
@@ -44,10 +43,7 @@ const handlePageChange = (changeBy) => {
   setPage(page + changeBy);
 }
 
-const handleHeart=(id)=>{
-  setColor(!color)
- console.log(id)
-}
+
 
   return (
     <div className='Container'>
@@ -72,7 +68,7 @@ const handleHeart=(id)=>{
        
              {data.length>0 && data.map((item)=>(
                 <div className='Mugs' key={item.id}>
-                 <div> <Icon className='heart' onClick={()=>handleHeart(item.id)} backgroundColor={color?"red":null} cursor="pointer" m="5px" padding="2px" color={color?"white":"grey"} w={6} h={5} border="1px solid grey" borderRadius="50%"  as={FiHeart}></Icon></div>
+                 <div> <Icon className='heart'   cursor="pointer" m="5px" padding="2px"  w={6} h={5} border="1px solid grey" borderRadius="50%"  as={FiHeart}></Icon></div>
                     <div><img  src={item.image} /> </div>
                     <span>Featured</span>
                     <div style={{display:"flex"}} ><h1>INR {item.price}</h1>

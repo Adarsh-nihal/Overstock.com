@@ -1,8 +1,10 @@
 import React from 'react'
-import {useParams } from "react-router-dom";
+import {useParams,Link } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Button, Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
+import { saveData } from './Utils/LocalStorage';
+
 import {MdAddShoppingCart } from 'react-icons/md'
 
 import axios from 'axios';
@@ -15,6 +17,12 @@ const  BlanketSingle = () => {
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })
+
+ 
+const handleCart=()=>{
+  saveData("Cart",item)
+
+}
     return (
       <div className='Single'>
          <div>
@@ -32,8 +40,8 @@ const  BlanketSingle = () => {
         <div className='shop'><h3> <CheckCircleIcon/>Free Shipping</h3></div>
 
         <div className='btn'>
-          <Button>Go Back</Button>
-          <Button ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
+        <Link to="/blankets"><Button bg="grey">Go Back</Button></Link> 
+          <Button onClick={()=>handleCart(item.id)} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
       </div>

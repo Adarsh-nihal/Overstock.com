@@ -18,10 +18,13 @@ import Towels from './Towels';
 import Blankets from './Blankets';
 import Tree from './Tree';
 import Garland from './Garland';
+ import LoginPage from '../Pages/LoginPage';
+ import ListPage from "../Pages/ListPage"
+import { Home } from './home/Home';
 const MainRoutes = () => {
   return (
     <Routes>
-
+      <Route path="/" element={<Home />} />
       <Route path="/mug" element={<Mugs />} />
       <Route path="/cookingCutters" element={<CookiesCutter />} />
       <Route path="/mixers" element={<Mixtures />} />
@@ -31,6 +34,10 @@ const MainRoutes = () => {
       <Route path="/blankets" element={<Blankets />} />
       <Route path="/tree" element={<Tree />}></Route>
       <Route path="/garland" element={<Garland />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/list" element={<ListPage />} />
+
+
        <Route path="/mugs/:id" element={<MugsSingle />} />
        <Route path="/cookingCutters/:id" element={<CookiesSingle />} />
        <Route path="/mixers/:id" element={<MixturesSingle />} />
