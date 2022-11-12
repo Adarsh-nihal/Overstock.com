@@ -8,9 +8,10 @@ import { Banners } from "./Banner"
 import { StaticProd } from "./StaticProduct"
 
 import { ImageSlider } from "./HomeCrousel"
-
+import {useSelector} from "react-redux";
+import AdminAdd from "../AdminAdd";
 export const Home = () => {
-
+const isAdmin  = useSelector((state)=>state.isAdmin);
     const imagess = [
         {
           id: 1,
@@ -137,6 +138,7 @@ export const Home = () => {
   ];
     return (
         <>
+        <AdminAdd/>
             <Hero />
             <Deals offers={Offer_Deals} />
             <Banners src = {"https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920"} title ={"Select Lighting & Ceiling Fans"} subtitle = {"Select Lighting & Ceiling Fans"} />

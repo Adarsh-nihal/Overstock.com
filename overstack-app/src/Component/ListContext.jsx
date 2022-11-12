@@ -1,6 +1,6 @@
 import React from 'react'
 import MainList from './MainList'
-const list = React.createContext()
+const ListCont = React.createContext()
 const ListContext = () => {
     const [display,setDisplay] = useState();
     const [edit2,setEdit2] = useState(true);
@@ -17,7 +17,9 @@ const ListContext = () => {
         setEdit2(false);
     }
   return (
-    <div>ListContext</div>
+    <ListCont.Provider >
+     {props.children}
+    </ListCont.Provider>
   )
 }
 

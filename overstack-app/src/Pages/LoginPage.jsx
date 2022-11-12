@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./LoginPage.css";
 import  axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLoginSuccess, loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
 import { createBrowserHistory } from "@remix-run/router";
+import {useNavigate,Navigate} from "react-router-dom"
 const LoginPage = () => {
+  const navigate = useNavigate()
   const [semail,setSemail] = useState('');
   const [spass,setSpass] = useState("");
   const [scpass,setScpass] = useState('');
@@ -17,11 +19,11 @@ const LoginPage = () => {
   if(user ){
     console.log(user,"sdafio");
   }
-  // useEffect(()=>{
-  //   if(user){
-  //      history.push('/');
-  //   }
-  // },[user,history])
+  useEffect(()=>{
+    if(user){
+       history.push('/');
+    }
+  },[user,history]);
   const handleSignout = () =>{
     console.log('signout');
     dispatch(logoutInitiate())
@@ -41,6 +43,7 @@ const LoginPage = () => {
     }
     setLpass('');
     setLemail('');
+    return navigate("/");
   }
 
   const handleRegister = () =>{
@@ -103,7 +106,7 @@ const LoginPage = () => {
       </div>
       </div> }
       {isAuth && <div className="use_signout"> 
-        <div>userID:{user}</div>
+        <div style={{ textAlign:"Center",fontSize:"20px"}}>userID:{user}</div>
         <button className="use_signout_btn" onClick={handleSignout}>Signout</button>
         </div> }
     </>
