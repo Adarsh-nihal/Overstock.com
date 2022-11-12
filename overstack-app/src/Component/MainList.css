@@ -9,15 +9,14 @@
     border-radius: 10px;
 }
 .main_list_m{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
     grid-gap:10px ;
-    grid-template-columns: auto;
 }
 .main_list{
     width: 200px;
     height: 240px;
     border: 1px solid gray;
+
 }
 .like_product{
     display: grid;
