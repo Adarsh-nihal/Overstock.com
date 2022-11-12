@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./MainList.css";
 import {
   Drawer,
@@ -12,10 +12,26 @@ import {
   Button,
   Input,
 } from "@chakra-ui/react";
-const MainList = () => {
+import { useState } from "react";
+const MainList = ({edit,handleDisplay}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   let listArr = ["FAVORITES", "SAVE FOR LATTER","fiusaoh"];
   const btnRef = React.useRef();
+  const [display,setDisplay] = useState();
+  const [edit2,setEdit2] = useState(true);
+  const handleSave = () =>{
+      if(display){
+        setEdit2(false);
+        handleDisplay(display);
+      }else{
+        alert('There is nothing in the display name');
+        return
+      }
+  }
+  const handleCancel = () =>{
+      setEdit2(false);
+  }
+
   return (
     <div>
       <div className="main_one">
@@ -25,13 +41,13 @@ const MainList = () => {
         </button>
       </div>
       <hr />
-      {/* <div>
+      {edit && edit2 && <div>
         <input type="text" placeholder='Firstname' />
         <input type="text" placeholder='Lastname'/>
-        <input type="text" placeholder='Displayname'/>
-        <button>Canel</button> <button>Save</button>
-      </div> */}
-      <div className="main_list_m">
+        <input type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
+        <button onClick={handleCancel}>Canel</button> <button onClick={handleSave}>Save</button>
+      </div>}
+      {!edit && edit2 && <div className="main_list_m">
       {listArr.map((item) => {
         return (
           <div className="main_list">
@@ -45,7 +61,7 @@ const MainList = () => {
           </div>
         );
       })}
-      </div>
+      </div>}
 
       <Drawer
         isOpen={isOpen}
