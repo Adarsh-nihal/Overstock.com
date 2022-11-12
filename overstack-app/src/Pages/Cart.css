@@ -1,0 +1,36 @@
+.cart_page{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+.cart_main{
+    border: 1px solid black;
+    padding: 10px;
+    width:25%;
+}
+.cart_data{
+    width: 70%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 50px;
+    height:200px;
+}
+.cart_two{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_three{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_four{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_three span{
+    color: red;
+}

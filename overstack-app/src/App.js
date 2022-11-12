@@ -8,7 +8,7 @@ import CookiesCutter from './Component/CookiesCutter';
 import Mixtures from './Component/Mixtures';
 import Fryers from './Component/Fryers';
 import ListPage from './Pages/ListPage';
-
+import Cart from './Pages/Cart';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       {/* <Navbar/> */}
       {/* <LoginPage/> */}
       <ListPage/>
-
+      {/* <Cart/> */}
     {/* <MainRoutes />
       <Mugs />
       <CookiesCutter/>
