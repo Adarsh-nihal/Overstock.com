@@ -15,8 +15,8 @@ function App() {
     <div className="App">
       {/* <Navbar/> */}
       {/* <LoginPage/> */}
-      <ListPage/>
-      {/* <Cart/> */}
+      {/* <ListPage/> */}
+      <Cart/>
     {/* <MainRoutes />
       <Mugs />
       <CookiesCutter/>
