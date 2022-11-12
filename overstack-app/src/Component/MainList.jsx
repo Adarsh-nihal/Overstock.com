@@ -42,10 +42,10 @@ const MainList = ({edit,handleDisplay}) => {
       </div>
       <hr />
       {edit && edit2 && <div>
-        <input type="text" placeholder='Firstname' />
-        <input type="text" placeholder='Lastname'/>
-        <input type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
-        <button onClick={handleCancel}>Canel</button> <button onClick={handleSave}>Save</button>
+        <Input type="text" placeholder='Firstname' />
+        <Input type="text" placeholder='Lastname'/>
+        <Input type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
+        <Button onClick={handleCancel}>Canel</Button> <Button onClick={handleSave}>Save</Button>
       </div>}
       {!edit && edit2 && <div className="main_list_m">
       {listArr.map((item) => {
