@@ -83,9 +83,8 @@
 }
 .use_signout{
     background-color: rgb(231, 219, 219);
-    position: absolute;
-    left: 30%;
-    top: 20%;
+    margin: auto;
+    margin-top: 140px;
     width: 40%;
     height: 100vh;
     align-items: center;

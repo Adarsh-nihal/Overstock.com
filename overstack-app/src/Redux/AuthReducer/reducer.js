@@ -39,6 +39,7 @@ const reducer = (state = inState,action) => {
         return{
             ...state,
             isAuthLoading:false,
+            isAuth:true,
             user:payload
         }
     case types.USER_REGISTER_FAILURE:
