@@ -15,9 +15,14 @@ const Cart = () => {
   const [cart,setCart]=useState(data)
   const toast = useToast()
    
-  const handleDelete=(id)=>{
+  const handleDelete=(name)=>{
+    if(cart.length===1){
+      localStorage.removeItem("Cart")
+      setCart([])
+      return
+    }
   const deletion=cart.filter((item)=>{
-    return item.id!==id
+    return item.name!==name
    })
   setCart(deletion)
   localStorage.setItem("Cart",JSON.stringify(cart))
@@ -35,7 +40,17 @@ const Cart = () => {
  },0)
  console.log(sum)
 
-  
+  const handleOrder=()=>{
+    localStorage.removeItem("Cart")
+    setCart([])
+    toast({
+      title: 'order Successfull.',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+
+  }
 
   return (
     <div>
@@ -58,9 +73,8 @@ const Cart = () => {
 
               <div><p>{item.name}</p></div>
               <div><h3> <CheckCircleIcon/>Free Shipping</h3></div>
-       <Button onClick={()=>handleDelete(item.id)} bg="skyblue" color="white">Delete</Button>
+       <Button onClick={()=>handleDelete(item.name)} bg="red"  width="200px" color="white">Delete</Button>
        
-       <Button bg="tomato" color="white" ml="40px">order</Button>
 
 
               </div>
@@ -72,12 +86,12 @@ const Cart = () => {
                 <div className='cart_one'>
                 <div className='cart_two'>Total Item<span style={{color:"black",fontWeight:"600"}}>{cart.length}</span> </div>
 
-                    <div className='cart_two'>price <span>0</span> </div>
+                    <div className='cart_two'>price <span>${parseFloat(sum.toFixed(2))}</span> </div>
                     <div className='cart_three'>Discount <span>0</span></div>
                     <hr />
                     <div className='cart_four'>Total Price <span>${parseFloat(sum.toFixed(2))}</span> </div>
                 </div>
-                <Button color="white"  bg="#718096" mt="20px" textAlign="center">Confirm Checkout</Button>
+                <Button onClick={handleOrder} color="white"  bg="#718096" mt="20px" textAlign="center">Confirm Order</Button>
             </div>
         </div>
         

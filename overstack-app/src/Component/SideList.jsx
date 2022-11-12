@@ -3,6 +3,7 @@ import "./SideList.css";
 import {FaPen, FaRegBookmark, FaRegHeart} from "react-icons/fa"
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 const SideList = ({handleClick,display}) => {
   const userId = useSelector((state)=>state.user)
   const handle = () =>{

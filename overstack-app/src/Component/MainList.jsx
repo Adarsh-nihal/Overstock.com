@@ -28,9 +28,7 @@ const MainList = ({edit,handleDisplay}) => {
         return
       }
   }
-  const handleCancel = () =>{
-      setEdit2(false);
-  }
+ 
 
   return (
     <div>
@@ -42,10 +40,9 @@ const MainList = ({edit,handleDisplay}) => {
       </div>
       <hr />
       {edit && edit2 && <div>
-        <Input type="text" placeholder='Firstname' />
-        <Input type="text" placeholder='Lastname'/>
-        <Input type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
-        <Button onClick={handleCancel}>Canel</Button> <Button onClick={handleSave}>Save</Button>
+    
+        <Input w="50%" type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
+        <Button onClick={handleSave}>Save</Button>
       </div>}
       {!edit && edit2 && <div className="main_list_m">
       {listArr.map((item) => {

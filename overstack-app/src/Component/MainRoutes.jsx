@@ -22,6 +22,7 @@ import Garland from './Garland';
  import ListPage from "../Pages/ListPage"
 import { Home } from './home/Home';
 import Cart from "../Pages/Cart"
+import AdminAdd from './AdminAdd';
 const MainRoutes = () => {
   return (
     <Routes>
@@ -38,6 +39,8 @@ const MainRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route path="/Cart" element={<Cart />} />
+      <Route path="/admin" element={<AdminAdd />} />
+
 
 
        <Route path="/mugs/:id" element={<MugsSingle />} />
