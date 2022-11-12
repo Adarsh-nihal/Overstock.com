@@ -92,31 +92,31 @@ export default function RespNav() {
         onClick={() => setShow(!show)}
       >
         <div>
-          <Link to="mug">Mugs</Link>
+          <Link to="/mug">Mugs</Link>
         </div>
         <div>
-          <Link to="cookingCutters">Cooking Cutters</Link>
+          <Link to="/cookingCutters">Cooking Cutters</Link>
         </div>
         <div>
-          <Link to="fryer">Air Fryers</Link>
+          <Link to="/fryer">Air Fryers</Link>
         </div>
         <div>
-          <Link to="mixers">Mixers</Link>
+          <Link to="/mixers">Mixers</Link>
         </div>
         <div>
-          <Link to="lamps">Lamps</Link>
+          <Link to="/lamps">Lamps</Link>
         </div>
         <div>
-          <Link to="towels">Towels</Link>
+          <Link to="/towels">Towels</Link>
         </div>
         <div>
-          <Link to="blankets">Blankets</Link>
+          <Link to="/blankets">Blankets</Link>
         </div>
         <div>
-          <Link to="tree">Tree Skirts</Link>
+          <Link to="/tree">Tree Skirts</Link>
         </div>
         <div>
-          <Link to="garland">Garlands</Link>
+          <Link to="/garland">Garlands</Link>
         </div>
       </div>
     </div>

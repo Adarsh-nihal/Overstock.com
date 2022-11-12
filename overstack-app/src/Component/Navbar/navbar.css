@@ -100,8 +100,9 @@ img {
   border-top: 1px solid #dadcdf;
   padding-top: 20px;
 }
+
 .header .class-input input {
-  width: 97%;
+  width: 100%;
   height: 79%;
   outline: none;
   border: 1px solid #dadcdf;

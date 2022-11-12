@@ -87,7 +87,7 @@ export default function Navbar() {
             </div>
             {/* <div>Lists</div> */}
             <div className="chevronup">
-              <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
+            <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
             <div
               className="account-dropdown-content"
@@ -101,14 +101,11 @@ export default function Navbar() {
           </div>
           <div
             id="cart1"
-            onClick={() => {
-              window.location.href = "/cart";
-            }}
             className="class-account"
           >
             <div className="Cart__Icon-Image" style={{fontSize:" 25px"}}>
               {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" /> */}
-              <FaShoppingCart/>
+              <Link to="/Cart">    <FaShoppingCart/></Link>
             </div>
             
             {/* <div>Cart</div> */}

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import {useParams,Link } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
-import { Button, Icon } from '@chakra-ui/react'
+import { Button, Icon ,useToast} from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 import {MdAddShoppingCart } from 'react-icons/md'
 import { saveData } from './Utils/LocalStorage';
 import axios from 'axios';
 const MugsSingle = () => {
+  const toast = useToast()
+
     const{id}=useParams()
-    console.log(id)
+    console.log("as")
     const[item,setData]=React.useState({});
     useEffect(()=>{
       axios.get(`http://localhost:8080/mugs/${id}`)
@@ -21,6 +23,12 @@ const MugsSingle = () => {
  
 const handleCart=()=>{
   saveData("Cart",item)
+  toast({
+    title: 'Added',
+    status: 'success',
+    duration: 3000,
+    isClosable: true,
+  })
 
 }
     return (
@@ -41,7 +49,7 @@ const handleCart=()=>{
 
         <div className='btn'>
          <Link to="/mug"><Button bg="grey">Go Back</Button></Link> 
-          <Button onClick={()=>handleCart(item.id)} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
+          <Button onClick={handleCart} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
       </div>

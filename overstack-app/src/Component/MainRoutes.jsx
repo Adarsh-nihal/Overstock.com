@@ -21,6 +21,7 @@ import Garland from './Garland';
  import LoginPage from '../Pages/LoginPage';
  import ListPage from "../Pages/ListPage"
 import { Home } from './home/Home';
+import Cart from "../Pages/Cart"
 const MainRoutes = () => {
   return (
     <Routes>
@@ -36,6 +37,7 @@ const MainRoutes = () => {
       <Route path="/garland" element={<Garland />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
+      <Route path="/Cart" element={<Cart />} />
 
 
        <Route path="/mugs/:id" element={<MugsSingle />} />

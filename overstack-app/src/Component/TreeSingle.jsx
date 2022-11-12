@@ -1,7 +1,7 @@
 import React from 'react'
 import {useParams,Link } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
-import { Button, Icon } from '@chakra-ui/react'
+import { Button, Icon, useToast } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 import {MdAddShoppingCart } from 'react-icons/md'
 import { saveData } from './Utils/LocalStorage';
@@ -9,6 +9,7 @@ import axios from 'axios';
 const  TreeSingle = () => {
     const {id}=useParams()
     console.log(id)
+    const toast=useToast()
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
       axios.get(`http://localhost:8080/tree/${id}`)
@@ -18,7 +19,12 @@ const  TreeSingle = () => {
     
     const handleCart=()=>{
       saveData("Cart",item)
-    
+      toast({
+        title: 'Added',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
     }
     return (
       <div className='Single'>
