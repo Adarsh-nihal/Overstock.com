@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { adminLoginSuccess, loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
 import { createBrowserHistory } from "@remix-run/router";
 import {useNavigate,Navigate} from "react-router-dom"
+import { useToast } from "@chakra-ui/react";
 const LoginPage = () => {
   const navigate = useNavigate()
   const [semail,setSemail] = useState('');
@@ -16,6 +17,7 @@ const LoginPage = () => {
   const user = useSelector((res)=>res.user)
   const isAuth = useSelector((res)=>res.isAuth)
   const history = createBrowserHistory()
+  const toast=useToast()
   if(user ){
     console.log(user,"sdafio");
   }
@@ -29,21 +31,41 @@ const LoginPage = () => {
     dispatch(logoutInitiate())
   }
 
+  if(isAuth){
+    toast({
+      title: 'Hello User',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+    return navigate("/");
+
+  }
   const handleSignin = ()=>{
     
     if(lpass && lemail){
       if(lemail === "admin@ostack.org" && lpass === "admin@321"){
         dispatch(adminLoginSuccess("Admin"))
+        toast({
+          title: 'Hello Admin',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        })
+        return navigate("/");
       }else if(lpass){
         dispatch(loginInitiate(lemail,lpass))
+       
       }else{
+         
         return;
+        
       }
 
     }
     setLpass('');
     setLemail('');
-    return navigate("/");
+    
   }
 
   const handleRegister = () =>{
@@ -98,14 +120,14 @@ const LoginPage = () => {
           <input type="mail" placeholder="Email" value={lemail} onChange={(e)=>setLemail(e.target.value)} required /><br />
           <label>Password*</label><br />
           <input type="password" placeholder="Password" value={lpass} onChange={(e)=>setLpass(e.target.value)} required />
-          <button onClick={handleSignin} >Sign In</button>
+          <button onClick={handleSignin}  >Sign In</button>
           <a href="">
             <p><u>Forgot your password?</u></p>
           </a>
         </div>
       </div>
       </div> }
-      {isAuth && <div className="use_signout"> 
+      {isAuth && <div  className="use_signout"> 
         <div style={{ textAlign:"Center",fontSize:"20px"}}>userID:{user}</div>
         <button className="use_signout_btn" onClick={handleSignout}>Signout</button>
         </div> }

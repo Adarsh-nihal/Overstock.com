@@ -3,6 +3,7 @@
     justify-content: space-between;
     font-size: 20px;
     margin-bottom:10px ;
+
 }
 .main_one button{
     border: 1px solid gray;
@@ -11,6 +12,7 @@
 .main_list_m{
     display: flex;
     grid-gap:10px ;
+
 }
 .main_list{
     width: 200px;
@@ -26,4 +28,28 @@
 }
 .like_product div{
     background-color: rgb(207, 198, 198);
+}
+
+@media only screen and (min-width: 250px) and (max-width: 500px) {
+
+    .main_one{
+        width:70%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        margin-bottom:10px ;
+    
+    }
+    .main_list_m{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap:10px ;
+    
+    }
+    .main_list{
+        width: 100px;
+        height: 80px;
+        border: 1px solid gray;
+    
+    }
 }

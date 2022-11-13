@@ -43,6 +43,7 @@ const MainRoutes = () => {
 
 
 
+
        <Route path="/mugs/:id" element={<MugsSingle />} />
        <Route path="/cookingCutters/:id" element={<CookiesSingle />} />
        <Route path="/mixers/:id" element={<MixturesSingle />} />

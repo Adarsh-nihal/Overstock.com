@@ -7,14 +7,18 @@ import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 import {FaShoppingCart} from "react-icons/fa"
 import {MdNotificationsActive} from "react-icons/md"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 
 export default function Navbar() {
   const [query,setQuery]=React.useState("")
   const [data,setData]=React.useState([])
   const {isAdmin,isAuth}=useSelector((state)=> state)
-  
+  const dispatch=useDispatch()
+  const handleSignout=()=>{
+    dispatch(logoutInitiate())
+  }
   const handleFilter=(e)=>{
       setQuery(e.target.value)
       console.log(query)
@@ -79,7 +83,7 @@ export default function Navbar() {
               <div>My Reviews</div>
               <div>Gift Cards</div>
               <div>Help</div>
-              {isAuth?<div>Sign Out</div>:<div>Sign in</div>}
+              {isAuth?<div onClick={handleSignout}>Sign Out</div>:<div>Sign in</div>}
             </div>
           </div>
           <div className="class-account class-account-common">

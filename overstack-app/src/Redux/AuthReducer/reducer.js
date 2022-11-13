@@ -52,7 +52,7 @@ const reducer = (state = inState,action) => {
     case types.USER_LOGOUT_REQUEST:
         return{
             ...state,
-            isAuthLoading:true
+            isAuthLoading:true,
         }
     case types.USER_LOGOUT_SUCCESS:
         return{

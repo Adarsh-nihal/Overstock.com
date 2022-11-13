@@ -140,7 +140,7 @@ const isAdmin  = useSelector((state)=>state.isAdmin);
         <>
             <Hero />
             <Deals offers={Offer_Deals} />
-            <Banners src = {"https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920"} title ={"Select Lighting & Ceiling Fans"} subtitle = {"Select Lighting & Ceiling Fans"} />
+            {/* <Banners src = {"https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920"} title ={"Select Lighting & Ceiling Fans"} subtitle = {"Select Lighting & Ceiling Fans"} /> */}
             
             <StaticProd prod = {Static_Products} />
             <ImageSlider imagess = {imagess} />

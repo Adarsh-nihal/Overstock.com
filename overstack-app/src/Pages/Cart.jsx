@@ -25,7 +25,7 @@ const Cart = () => {
     return item.name!==name
    })
   setCart(deletion)
-  localStorage.setItem("Cart",JSON.stringify(cart))
+  localStorage.setItem("Cart",JSON.stringify(deletion))
   console.log(cart)
 
    toast({

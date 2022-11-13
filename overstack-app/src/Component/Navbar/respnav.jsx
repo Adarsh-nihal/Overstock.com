@@ -16,15 +16,13 @@ export default function RespNav() {
         </div>
         <div
           className="overstocklogo"
-          onClick={() => {
-            window.location.href = "/";
-          }}
+         
         >
-          <img
+            <Link to="/"><img
             className="overstockIndex"
-            src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
+         src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
             alt=""
-          />
+          /></Link> 
         </div>
         <div className="class-input">
           <div>
@@ -35,7 +33,7 @@ export default function RespNav() {
           </div>
         </div>
         <div id="account1" className="class-account class-account-common">
-          <Link href="/login">
+          <Link to="/login">
             {" "}
             <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
           </Link>
@@ -54,7 +52,7 @@ export default function RespNav() {
         </div>
         <div className="class-account class-account-common">
           <div>
-            <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
+          <Link to="/list">  <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" /></Link>
           </div>
         
           <div className="chevronup">
@@ -72,16 +70,14 @@ export default function RespNav() {
         </div>
         <div
           id="cart1"
-          onClick={() => {
-            window.location.href = "/cart";
-          }}
+         
           className="class-account"
         >
           <div className="Cart__Icon-Image" style={{fontSize:"25px"}}>
             {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" />
             
             */}
-            <FaShoppingCart/>
+          <Link to="/Cart">  <FaShoppingCart/></Link>
           </div>
           {/* <p style={{ margin: "auto" }}>{0}</p> */}
         </div>

@@ -14,7 +14,7 @@ const SideList = ({handleClick,display}) => {
         <div className='list_one'>
          <div className='list_one_one'>
           <div className='list_one_two'>O</div>
-          <div className='list_one_three'>{display?display:userId}</div>
+          <div className='list_one_three' >{display?<h1 style={{marginRight:"120px"}}>{display}</h1>:userId}</div>
          </div>
          <div className='list_one_four' >
           you haven't added a bio <br />
