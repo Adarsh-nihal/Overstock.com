@@ -49,33 +49,33 @@ const Cart = () => {
           <div className="MugCart">
             {cart.length > 0 &&
               cart.map((item) => (
-                <div className="MugChild1" key={item.id}>
+                <div className="MugChild1" align="center" key={item.id}>
                   <div>
                     <img
-                      width="70%"
-                      style={{ margin: "auto" }}
+                     className="productImage"
+                      
                       src={item.image}
                       alt={item.name}
                     />{" "}
                   </div>
-                  <div style={{ display: "flex", fontSize: "20px" }}>
+                  <div  style={{  fontSize: "20px" }}>
                     <h1>${item.price}</h1>
                   </div>
                   {item.count == 2 && (
-                    <div style={{ display: "flex", marginLeft: "100px" }}>
+                    <div className="productRating">
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                     </div>
                   )}
                   {item.count == 3 && (
-                    <div style={{ display: "flex", marginLeft: "100px" }}>
+                    <div className="productRating">
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                     </div>
                   )}
                   {item.count == 4 && (
-                    <div style={{ display: "flex", marginLeft: "100px" }}>
+                    <div className="productRating">
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
@@ -83,7 +83,7 @@ const Cart = () => {
                     </div>
                   )}
                   {item.count == 5 && (
-                    <div style={{ display: "flex", marginLeft: "100px" }}>
+                    <div className="productRating">
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                       <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
