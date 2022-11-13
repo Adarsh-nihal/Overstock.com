@@ -5,7 +5,7 @@ export const Hero = () => {
     <div className="contianer-fluid">
       <div className="row">
         <div className="col">
-          <a href="category.html">
+          
             <div className="banner">
               <div className="bannerDiv">
                 <div>
@@ -22,7 +22,7 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
-          </a>
+         
         </div>
       </div>
     </div>

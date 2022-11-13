@@ -1,79 +1,117 @@
-
-    .cart_page{
-    width: 95%;
-    margin: auto;
-    margin-top: 130px;
-    margin-bottom: 60px;
-    display: flex;
-    gap: 10px;
-} 
-.cart_main{
-    border: 1px solid black;
-    padding: 10px;
-    width:25%;
-    min-width: 300px;
+.cart_page {
+  width: 100%;
+  margin: auto;
+  margin-top: 130px;
+  margin-bottom: 60px;
+  display: flex;
+  gap: 10px;
 }
-.cart_data{
+.cart_main {
+  border: 1px solid black;
+  padding: 10px;
+  width: 25%;
+  min-width: 300px;
+}
+.cart_data {
+  width: 70%;
+  min-width: 400px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 50px;
+  background-color: lavenderblush;
+}
+.cart_two {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+.cart_three {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.cart_four {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+.cart_three span {
+  color: red;
+}
+.MugCart {
+  margin: auto;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #444;
+}
+.MugChild1 {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+.productImage{
+    padding:5%
+}
+.productRating{
+    display: flex;
+    margin-left:100px
+    
+  }
+.MugChild1 > div > h1 {
+  color: black;
+  font-weight: 600;
+  /* padding-left: 80px; */
+  /* padding-right: 0px; */
+}
+.MugChild1 > div > p {
+  padding: 10px;
+  font-size: 12px;
+}
+.MugChild1 > div > h3 {
+  font-weight: 600;
+  font-size: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  text-decoration: line-through;
+}
+@media (max-width: 1000px) {
+  .cart_page {
+    flex-direction: column-reverse;
+  }
+  .MugCart {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cart_data {
+    width: 100%;
+    
+  }
+  .productRating{
+    display: flex;
+    margin-left:155px
+    
+  }
+}
+@media (max-width: 500px) {
+  .MugCart {
+    grid-template-columns: repeat(1, 1fr);
+    gap:0px;
+  }
+  .cart_data {
+    width: 100%;
+  }
+  .productImage {
     width: 70%;
-    min-width: 400px;
-    border: 1px solid black;
-    text-align: center;
-    font-size: 50px;
+    margin:auto;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  
 }
-.cart_two{
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700
-}
-.cart_three{
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-}
-.cart_four{
-    font-size: 25px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700
-}
-.cart_three span{
-    color: red;
-}
-.MugCart{
-    margin: auto;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr) );
-  gap:10px;
-  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
-  color:#444;
-}
- .MugChild1{
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-    }
- .MugChild1>div>h1{
-    color: black;
-    font-weight: 600;
-   padding-left: 80px;
- }
- .MugChild1>div>p{
-    padding: 10px;
-    font-size: 12px;
- }
- .MugChild1>div>h3{
-    font-weight: 600;
-    font-size: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    text-decoration: line-through;
- }
- @media (max-width:800px){
-    .cart_page{
-        flex-direction: column-reverse;
-    }
- }
- 
