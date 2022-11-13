@@ -33,7 +33,7 @@ const handleChange=(e)=>{
   params: {
     _page:page,
     _limit:12,
-    _sort:"count",
+    _sort:"price",
     _order:value
   }
  })
@@ -63,10 +63,6 @@ const handleHeart=(id)=>{
            <label>SortBy:</label>
           <select  onChange={handleChange} style={{width:"16%",border:"1px solid black",marginLeft:"15px"}}>
           <option value="Best Selling">Best Selling</option>
-          <option  name="name" value="asc">By Name A to Z</option>
-          <option  name="name" value="desc">By Name Z to A</option>
-          <option  name="count" value="asc">Rating Low-High</option>
-          <option  name="count" value="desc">Rating High-Low</option>
            <option name="price" value="asc">Price Low-High</option>
          <option   name="price" value="desc">Price High-Low</option>
         
