@@ -36,6 +36,7 @@ github - https://github.com/Adarsh-nihal/-utopian-cover-8281
 * Javascript
 * Chakra-Ui
 * Json-server
+* Firebase
 * Github
 
 # It's a Group Project 
