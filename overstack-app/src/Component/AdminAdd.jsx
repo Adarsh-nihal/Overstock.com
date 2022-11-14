@@ -23,14 +23,16 @@ const toast=useToast()
          count:2
       }
       axios.post(`https://stock-server.onrender.com/${value}`,payload)
-      .then((r)=>console.log(r.data))
-      .catch((e)=>console.log(e))
-      toast({
-        title: 'Added',
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
+      .then((r)=>{
+        toast({
+          title: 'Added',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
       })
+      .catch((e)=>console.log(e))
+     
     }
   return (
     <div style={{ marginTop: "140px"}}>
@@ -53,7 +55,7 @@ const toast=useToast()
             <Input value={image}  onChange={(e)=>setUrl(e.target.value)} mt="10px" type="url"  placeholder='enter image URL'></Input>
             <Input value={price}  onChange={(e)=>setPrice(e.target.value)} mt="10px" type= "number"  placeholder='enter the price'></Input>
         </div>
-        <div ><Button mt="10px" ml="116px" bg="red" color="white"  onClick={handleSubmit}>Submit</Button></div>
+        <div ><Button mt="10px" width={"60%"} ml="20%" bg="red" color="white"  onClick={handleSubmit}>Submit</Button></div>
     </div>
     </div>
   )

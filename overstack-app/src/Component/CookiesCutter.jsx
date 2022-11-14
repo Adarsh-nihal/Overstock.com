@@ -2,16 +2,35 @@ import React, { useEffect, useState } from 'react'
 import "./Mugs.css"
 import {ChevronDownIcon,CheckCircleIcon,ChevronRightIcon,ChevronLeftIcon} from "@chakra-ui/icons"
 
-import { Button,Spinner } from '@chakra-ui/react'
+import { Button,Spinner, useToast } from '@chakra-ui/react'
 import { useFetch } from './UseFetch'
 import {Link, useLocation} from "react-router-dom"
 import axios from 'axios'
 import { useSearchParams } from "react-router-dom";
 import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
+import { useSelector } from 'react-redux'
 
 
 const  CookiesCutter = () => {
+  const isAdmin=useSelector((state)=>state.isAdmin)
+  const toast=useToast();
+ 
+  const handleDelete=(id)=>{
+    axios.delete(`https://stock-server.onrender.com/cookingCutters/${id}`)
+    .then((res)=>{
+     setData(data.filter((e)=>{
+      return e.id!==id
+    }));
+    toast({
+      title: "Delete Successfull.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+    })
+    .catch((err)=>console.log(err))
+  }
 const [page,setPage]=useState(1)
 const location=useLocation()
 const [searchParams]=useSearchParams()
@@ -89,6 +108,13 @@ const handleHeart=(id)=>{
 
                     <div><p>{item.name}</p></div>
                     <div><h3> <CheckCircleIcon/>Free Shipping</h3></div>
+                    {
+                      isAdmin?(
+                        <div >
+                           <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                        </div>
+                      ):null
+                    }
                     </div>
              ))}
         </div >
