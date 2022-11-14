@@ -27,7 +27,7 @@ export default function Navbar() {
   React.useEffect(()=>{
   
       if(query){
-      axios.get(`http://localhost:8080/${query}`,{
+      axios.get(`https://stock-server.onrender.com/${query}`,{
           params: {
               q:query
       }})

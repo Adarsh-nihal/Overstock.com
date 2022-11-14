@@ -19,7 +19,7 @@ const [searchParams]=useSearchParams()
 const [color,setColor]=useState(false)
 
 
-  let url = `http://localhost:8080/blankets?_limit=12&_page=${page}`;
+  let url = `https://stock-server.onrender.com/blankets?_limit=12&_page=${page}`;
 
   const { loading, error, data,setData } = useFetch(url,page,location);
 
@@ -29,7 +29,7 @@ const handleChange=(e)=>{
 
  const {value}=e.target
 
- axios.get("http://localhost:8080/blankets",{
+ axios.get("https://stock-server.onrender.com/blankets",{
   params: {
     _page:page,
     _limit:12,

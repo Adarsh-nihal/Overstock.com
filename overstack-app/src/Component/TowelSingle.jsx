@@ -12,7 +12,7 @@ const TowelSingle = () => {
     const toast=useToast()
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/towels/${id}`)
+      axios.get(`https://stock-server.onrender.com/towels/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })

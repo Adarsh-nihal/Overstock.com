@@ -12,7 +12,7 @@ const LampSingle = () => {
     console.log(id)
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/lamps/${id}`)
+      axios.get(`https://stock-server.onrender.com/lamps/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })

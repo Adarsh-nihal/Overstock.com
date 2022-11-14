@@ -15,14 +15,14 @@ const Mugs = () => {
 const [page,setPage]=useState(1)
 
 
-  let url = `http://localhost:8080/mugs?_limit=12&_page=${page}`;
+  let url = `https://stock-server.onrender.com/mugs?_limit=12&_page=${page}`;
 
   const { loading, error, data,setData } = useFetch(url,page)
 const handleChange=(e)=>{
 
  const {value}=e.target
 
- axios.get("http://localhost:8080/mugs",{
+ axios.get("https://stock-server.onrender.com/mugs",{
   params: {
     _page:page,
     _limit:12,

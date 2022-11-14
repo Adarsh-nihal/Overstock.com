@@ -22,7 +22,7 @@ const toast=useToast()
          price:price,
          count:2
       }
-      axios.post(`http://localhost:8080/${value}`,payload)
+      axios.post(`https://stock-server.onrender.com/${value}`,payload)
       .then((r)=>console.log(r.data))
       .catch((e)=>console.log(e))
       toast({

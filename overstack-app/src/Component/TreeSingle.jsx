@@ -12,7 +12,7 @@ const  TreeSingle = () => {
     const toast=useToast()
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/tree/${id}`)
+      axios.get(`https://stock-server.onrender.com/tree/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })

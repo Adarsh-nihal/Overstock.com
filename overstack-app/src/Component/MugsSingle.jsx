@@ -13,7 +13,7 @@ const MugsSingle = () => {
     console.log("as")
     const[item,setData]=React.useState({});
     useEffect(()=>{
-      axios.get(`http://localhost:8080/mugs/${id}`)
+      axios.get(`https://stock-server.onrender.com/mugs/${id}`)
       .then((res)=>{setData(res.data)})
        .catch((error)=>console.log(error))
     },[])

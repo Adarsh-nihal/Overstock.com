@@ -12,7 +12,7 @@ const  MixturesSingle = () => {
     const toast=useToast()
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/mixers/${id}`)
+      axios.get(`https://stock-server.onrender.com/mixers/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })
