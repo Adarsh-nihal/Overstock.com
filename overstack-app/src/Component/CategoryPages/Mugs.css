@@ -130,9 +130,10 @@
 @media only screen and (min-width: 250px) and (max-width: 500px) {
    .Container{
       width:90%;
-      margin-top: 50px;;
+      margin-top: 50px;
    }
    .Container>h1{
+      margin-top:65px;
       font-size: 30px;
    }
    .SearchBy{
