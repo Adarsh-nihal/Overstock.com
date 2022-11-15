@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MainList from '../Component/MainList';
-import SideList from '../Component/SideList';
+import MainList from '../Component/listPage/MainList';
+import SideList from '../Component/listPage/SideList';
 import "./ListPage.css";
 const ListPage = () => {
   const [edit,setEdit] =useState(false);

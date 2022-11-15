@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import "./respnav.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function RespNav() {
   const [show, setShow] = useState(false);
+  const {isAdmin,isAuth}=useSelector((state)=>state)
+  const dispatch=useDispatch()
+  const handleSignout=()=>{
+    dispatch(logoutInitiate())
+  }
 
   return (
     <div className="header">
@@ -47,7 +54,17 @@ export default function RespNav() {
             <div>My Reviews</div>
             <div>Gift Cards</div>
             <div>Help</div>
-            <div>Sign Out</div>
+            {
+               isAuth?(
+                <div onClick={handleSignout}>
+                  sign Out
+                </div>
+               ):(
+                <div>
+                 <Link to="/login"> Sign In </Link>
+                </div>
+               )
+              }
           </div>
         </div>
         <div className="class-account class-account-common">
@@ -114,6 +131,13 @@ export default function RespNav() {
         <div>
           <Link to="/garland">Garlands</Link>
         </div>
+        {
+          isAdmin?(
+            <div style={{fontWeight:"bolder",color:"red"}}>
+              <Link to="/admin">Admin</Link>
+            </div>
+          ):null
+        }
       </div>
     </div>
   );

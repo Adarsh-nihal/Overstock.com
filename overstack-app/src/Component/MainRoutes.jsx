@@ -1,28 +1,30 @@
-import React from 'react'
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MugsSingle from './MugsSingle';
-import CookiesSingle from './CookiesSingle';
-import MixturesSingle from './MixturesSingle';
-import FreyersSingle from './FreyersSingle';
-import LampSingle from './LampSingle';
-import BlanketSingle from './BlanketSingle';
-import TowelSingle from './TowelSingle';
-import TreeSingle from './TreeSingle';
-import GarlandSingle from './GarlandSingle';
-import Mugs from './Mugs';
-import CookiesCutter from './CookiesCutter';
-import Mixtures from './Mixtures';
-import Fryers from './Fryers';
-import Lamps from './Lamps';
-import Towels from './Towels';
-import Blankets from './Blankets';
-import Tree from './Tree';
-import Garland from './Garland';
- import LoginPage from '../Pages/LoginPage';
- import ListPage from "../Pages/ListPage"
-import { Home } from './home/Home';
-import Cart from "../Pages/Cart"
-import AdminAdd from './AdminAdd';
+import MugsSingle from "./SinglePages/MugsSingle";
+import CookiesSingle from "./SinglePages/CookiesSingle";
+import MixturesSingle from "./SinglePages/MixturesSingle";
+import FreyersSingle from "./SinglePages/FreyersSingle";
+import LampSingle from "./SinglePages/LampSingle";
+import BlanketSingle from "./SinglePages/BlanketSingle";
+import TowelSingle from "./SinglePages/TowelSingle";
+import TreeSingle from "./SinglePages/TreeSingle";
+import GarlandSingle from "./SinglePages/GarlandSingle";
+import Mugs from "./CategoryPages/Mugs";
+import CookiesCutter from "./CategoryPages/CookiesCutter";
+import Mixtures from "./CategoryPages/Mixtures";
+import Fryers from "./CategoryPages/Fryers";
+import Lamps from "./CategoryPages/Lamps";
+import Towels from "./CategoryPages/Towels";
+import Blankets from "./CategoryPages/Blankets";
+import Tree from "./CategoryPages/Tree";
+import Garland from "./CategoryPages/Garland";
+import LoginPage from "../Pages/LoginPage";
+import ListPage from "../Pages/ListPage";
+import { Home } from "./home/Home";
+import Cart from "../Pages/Cart";
+import AdminAdd from "./AdminPages/AdminAdd";
+import PrivateRoute from "./private/privateRoute";
+import AdminPrivate from "./private/AdminPrivate";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -39,22 +41,92 @@ const MainRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route path="/Cart" element={<Cart />} />
-      <Route path="/admin" element={<AdminAdd />} />
+      <Route
+        path="/admin"
+        element={
+          <AdminPrivate>
+            <AdminAdd/>
+          </AdminPrivate>
+         
+        }
+      />
 
+      {/*  single pages with private Route */}
 
-
-
-       <Route path="/mugs/:id" element={<MugsSingle />} />
-       <Route path="/cookingCutters/:id" element={<CookiesSingle />} />
-       <Route path="/mixers/:id" element={<MixturesSingle />} />
-       <Route path="/fryers/:id" element={<FreyersSingle />} />
-       <Route path="/lamps/:id" element={<LampSingle />} />
-       <Route path="/towels/:id" element={<TowelSingle />} />
-       <Route path="/blankets/:id" element={<BlanketSingle />} />
-       <Route path="/tree/:id" element={<TreeSingle />} />
-       <Route path="/garland/:id" element={<GarlandSingle />} />
+      <Route
+        path="/mugs/:id"
+        element={
+          <PrivateRoute>
+            <MugsSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/cookingCutters/:id"
+        element={
+          <PrivateRoute>
+            <CookiesSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/mixers/:id"
+        element={
+          <PrivateRoute>
+            <MixturesSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/fryers/:id"
+        element={
+          <PrivateRoute>
+            <FreyersSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/lamps/:id"
+        element={
+          <PrivateRoute>
+            <LampSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/towels/:id"
+        element={
+          <PrivateRoute>
+            <TowelSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/blankets/:id"
+        element={
+          <PrivateRoute>
+            <BlanketSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/tree/:id"
+        element={
+          <PrivateRoute>
+            <TreeSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/garland/:id"
+        element={
+          <PrivateRoute>
+            <GarlandSingle />
+          </PrivateRoute>
+        }
+      />
     </Routes>
-  )
-}
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;

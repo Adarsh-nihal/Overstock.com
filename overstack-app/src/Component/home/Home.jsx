@@ -9,7 +9,7 @@ import { StaticProd } from "./StaticProduct"
 
 import { ImageSlider } from "./HomeCrousel"
 import {useSelector} from "react-redux";
-import AdminAdd from "../AdminAdd";
+// import AdminAdd from "../AdminPages/AdminAdd";
 export const Home = () => {
 const isAdmin  = useSelector((state)=>state.isAdmin);
     const imagess = [

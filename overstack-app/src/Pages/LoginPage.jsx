@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from "react";
 import "./LoginPage.css";
-import  axios from "axios";
+// import  axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLoginSuccess, loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
 import { createBrowserHistory } from "@remix-run/router";
-import {useNavigate,Navigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import { useToast } from "@chakra-ui/react";
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -70,8 +70,9 @@ const LoginPage = () => {
 
   const handleRegister = () =>{
     if(scpass !== spass || !spass ){
-      alert("passwords are not matching");
-      return;
+     alert("password don't match")
+      return  
+     
     }
     dispatch(registerInitiate(semail,spass));
     setScpass("");
