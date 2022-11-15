@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { Button, Icon, useToast } from "@chakra-ui/react";
 import "./Cart.css";
-import "../Component/Mugs.css";
+import "../Component/CategoryPages/Mugs.css";
 
 import {
   getData,

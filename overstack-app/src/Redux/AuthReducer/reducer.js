@@ -1,6 +1,5 @@
 import * as types from "./actionType";
 
-import React from 'react'
 const inState = {
     user:'',
     isAdmin:false,
@@ -24,6 +23,7 @@ const reducer = (state = inState,action) => {
             user:payload
         }
     case types.USER_LOGIN_FAILURE:
+        
         return{
             ...state,
             isAuthLoading:false,
@@ -50,6 +50,7 @@ const reducer = (state = inState,action) => {
             isAuth:true
         }
     case types.USER_LOGOUT_REQUEST:
+        
         return{
             ...state,
             isAuthLoading:true,

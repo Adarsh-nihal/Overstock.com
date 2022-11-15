@@ -2,8 +2,9 @@
 import './App.css';
 import Navbar from "./Component/Navbar/Navbar"
 import MainRoutes from './Component/MainRoutes';
-import { Footer } from './Component/footer';
+import { Footer } from './Component/home/footer';
 import RespNav from "./Component/Navbar/respnav"
+// import privateRoute from './Component/private/privateRoute';
 function App() {
   return (
 
@@ -15,6 +16,7 @@ function App() {
        <RespNav/>
       </div>
       <MainRoutes />
+     
       <Footer/>
  </div>
 

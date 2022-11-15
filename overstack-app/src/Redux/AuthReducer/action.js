@@ -1,6 +1,5 @@
 import { auth } from "../../fireBase";
 import * as types from "./actionType";
-
 const userLoginRquest =  () =>{
     return{
         type:types.USER_LOGIN_REQUEST
@@ -84,6 +83,7 @@ const registerInitiate = (email,password) =>{
         }
 };
 const loginInitiate = (email,password) =>{
+    
     return function (dispatch){
         dispatch(userLoginRquest());
         auth.signInWithEmailAndPassword(email.trim(),password).then((res)=>{
@@ -91,7 +91,9 @@ const loginInitiate = (email,password) =>{
             dispatch(userLoginSuccess(res.user.uid));
         }).catch((er)=>{
             console.log(er);
-            dispatch(userLoginFailure())})
+            dispatch(userLoginFailure())
+            
+        })
     }
     
 };
