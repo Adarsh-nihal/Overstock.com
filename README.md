@@ -12,7 +12,8 @@ whole website that we have created are responsive as well.
 netlify link - https://overstock-com-pi.vercel.app/
 
 github - https://github.com/Adarsh-nihal/-utopian-cover-8281
-
+  
+presentation - https://drive.google.com/file/d/1p62833QzuviPhflH3YMyhZirgE42b7ok/view?usp=share_link  
 
 
 ### Functionalities are:
