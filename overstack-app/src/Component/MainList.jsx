@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import "./MainList.css";
 import {
@@ -13,23 +14,35 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useState } from "react";
-const MainList = ({edit,handleDisplay}) => {
+const MainList = ({ edit, handleDisplay }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let listArr = ["FAVORITES", "SAVE FOR LATTER","fiusaoh"];
+  let listArr = ["FAVORITES", "SAVE FOR LATTER"];
   const btnRef = React.useRef();
-  const [display,setDisplay] = useState();
-  const [edit2,setEdit2] = useState(true);
-  const handleSave = () =>{
-      if(display){
-        setEdit2(false);
-        handleDisplay(display);
-      }else{
-        alert('There is nothing in the display name');
-        return
-      }
+  const [display, setDisplay] = useState();
+  const [edit2, setEdit2] = useState(true);
+  const [list, setList] = useState('')
+  const handleSave = () => {
+    if (display) {
+      setEdit2(false);
+      handleDisplay(display);
+    } else {
+      alert('There is nothing in the display name');
+      return
+    }
   }
- 
+  const handleCancel = () => {
+    setEdit2(false);
+  }
+  const handleSaveList = () => {
+    onClose();
+    if (list) {
+      listArr = [...listArr, list]
+      console.log(listArr)
+    }
+  }
+  useEffect(() => {
 
+  }, [listArr]);
   return (
     <div>
       <div className="main_one">
@@ -40,24 +53,25 @@ const MainList = ({edit,handleDisplay}) => {
       </div>
       <hr />
       {edit && edit2 && <div>
-    
-        <Input w="50%" type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
-        <Button onClick={handleSave}>Save</Button>
+        <Input type="text" placeholder='Firstname' />
+        <Input type="text" placeholder='Lastname' />
+        <Input type="text" value={display} onChange={(e) => setDisplay(e.target.value)} placeholder='Displayname' />
+        <Button onClick={handleCancel}>Canel</Button> <Button onClick={handleSave}>Save</Button>
       </div>}
       {!edit && edit2 && <div className="main_list_m">
-      {listArr.map((item) => {
-        return (
-          <div className="main_list">
-            <div className="like_product">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+        {listArr.map((item, index) => {
+          return (
+            <div key={index} className="main_list">
+              <div className="like_product">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div>{item}</div>
             </div>
-            <div>{item}</div>
-          </div>
-        );
-      })}
+          );
+        })}
       </div>}
 
       <Drawer
@@ -72,14 +86,14 @@ const MainList = ({edit,handleDisplay}) => {
           <DrawerHeader>Create a New List</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <Input placeholder="Type here..." value={list} onChange={(e) => setList(e.target.value)} />
           </DrawerBody>
 
           <DrawerFooter>
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme="blue" onClick={onClose}>
+            <Button colorScheme="blue" onClick={handleSaveList}>
               Save
             </Button>
           </DrawerFooter>
