@@ -2,23 +2,42 @@ import React, { useEffect, useState } from 'react'
 import "./Mugs.css"
 import {ChevronDownIcon,CheckCircleIcon,ChevronRightIcon,ChevronLeftIcon} from "@chakra-ui/icons"
 
-import { Button,Spinner } from '@chakra-ui/react'
+import { Button,Spinner, useToast } from '@chakra-ui/react'
 import { useFetch } from './UseFetch'
 import {Link, useLocation} from "react-router-dom"
 import axios from 'axios'
 import { useSearchParams } from "react-router-dom";
 import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
+import { useSelector } from 'react-redux'
 
 
 const  CookiesCutter = () => {
+  const isAdmin=useSelector((state)=>state.isAdmin)
+  const toast=useToast();
+ 
+  const handleDelete=(id)=>{
+    axios.delete(`https://stock-server.onrender.com/cookingCutters/${id}`)
+    .then((res)=>{
+     setData(data.filter((e)=>{
+      return e.id!==id
+    }));
+    toast({
+      title: "Delete Successfull.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+    })
+    .catch((err)=>console.log(err))
+  }
 const [page,setPage]=useState(1)
 const location=useLocation()
 const [searchParams]=useSearchParams()
 const [color,setColor]=useState(false)
 
 
-  let url = `http://localhost:8080/cookingCutters?_limit=12&_page=${page}`;
+  let url = `https://stock-server.onrender.com/cookingCutters?_limit=12&_page=${page}`;
 
   const { loading, error, data,setData } = useFetch(url,page,location);
 
@@ -28,11 +47,11 @@ const handleChange=(e)=>{
 
  const {value}=e.target
 
- axios.get("http://localhost:8080/cookingCutters",{
+ axios.get("https://stock-server.onrender.com/cookingCutters",{
   params: {
     _page:page,
     _limit:12,
-    _sort:"count",
+    _sort:"price",
     _order:value
   }
  })
@@ -62,10 +81,7 @@ const handleHeart=(id)=>{
            <label>SortBy:</label>
           <select  onChange={handleChange} style={{width:"16%",border:"1px solid black",marginLeft:"15px"}}>
           <option value="Best Selling">Best Selling</option>
-          <option  name="name" value="asc">By Name A to Z</option>
-          <option  name="name" value="desc">By Name Z to A</option>
-          <option  name="count" value="asc">Rating Low-High</option>
-          <option  name="count" value="desc">Rating High-Low</option>
+          
            <option name="price" value="asc">Price Low-High</option>
          <option   name="price" value="desc">Price High-Low</option>
         
@@ -92,6 +108,13 @@ const handleHeart=(id)=>{
 
                     <div><p>{item.name}</p></div>
                     <div><h3> <CheckCircleIcon/>Free Shipping</h3></div>
+                    {
+                      isAdmin?(
+                        <div >
+                           <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                        </div>
+                      ):null
+                    }
                     </div>
              ))}
         </div >

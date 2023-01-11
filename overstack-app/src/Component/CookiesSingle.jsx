@@ -1,24 +1,31 @@
 import React from 'react'
 import {useParams,Link } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
-import { Button, Icon } from '@chakra-ui/react'
+import { Button, Icon, useToast } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 import {MdAddShoppingCart } from 'react-icons/md'
 import { saveData } from './Utils/LocalStorage';
 
 import axios from 'axios';
 const CookiesSingle = () => {
+  const toast=useToast()
     const {id}=useParams()
     console.log(id)
     const[item,setData]=React.useState({});
     React.useEffect(()=>{
-      axios.get(`http://localhost:8080/cookingCutters/${id}`)
+      axios.get(`https://stock-server.onrender.com/cookingCutters/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     })
 
     const handleCart=()=>{
       saveData("Cart",item)
+      toast({
+        title: 'Added',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
     
     }
 

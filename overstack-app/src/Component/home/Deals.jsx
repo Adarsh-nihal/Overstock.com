@@ -1,4 +1,3 @@
-
 export const Deals = ({ offers }) => {
   return (
     <div className="container-fluid universalSpacingX">

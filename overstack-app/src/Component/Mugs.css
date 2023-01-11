@@ -1,11 +1,8 @@
 .Container{
    width:95%;
    margin:auto;
-   margin-top: 130px;;
-   /* position: absolute;
-   top: 0;
-   left: 0;
-   z-index: 2; */
+   margin-top: 110px;;
+  
 }
 .Container>h1{
    color: #2f3337;
@@ -19,7 +16,7 @@
 }
 .MugsData{
    margin: auto;
-   margin-top: 50px;
+   margin-top: 30px;
    display: grid;
    grid-template-columns: repeat(4,1fr);
  gap:20px;

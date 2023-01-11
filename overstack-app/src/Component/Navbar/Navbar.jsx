@@ -6,12 +6,19 @@ import {ChevronDownIcon,CheckCircleIcon,ChevronRightIcon,ChevronLeftIcon} from "
 import { Icon } from '@chakra-ui/react'
 import {FiHeart } from 'react-icons/fi'
 import {FaShoppingCart} from "react-icons/fa"
+import {MdNotificationsActive} from "react-icons/md"
+import { useDispatch, useSelector } from "react-redux";
+import { logoutInitiate } from "../../Redux/AuthReducer/action";
+
 
 export default function Navbar() {
   const [query,setQuery]=React.useState("")
   const [data,setData]=React.useState([])
-  
-  
+  const {isAdmin,isAuth}=useSelector((state)=> state)
+  const dispatch=useDispatch()
+  const handleSignout=()=>{
+    dispatch(logoutInitiate())
+  }
   const handleFilter=(e)=>{
       setQuery(e.target.value)
       console.log(query)
@@ -20,7 +27,7 @@ export default function Navbar() {
   React.useEffect(()=>{
   
       if(query){
-      axios.get(`http://localhost:8080/${query}`,{
+      axios.get(`https://stock-server.onrender.com/${query}`,{
           params: {
               q:query
       }})
@@ -40,9 +47,7 @@ export default function Navbar() {
          
           <div
             className="overstocklogo"
-            onClick={() => {
-              window.location.href = "/";
-            }}
+           
           >
            <Link to="/"> <img
               className="overstockIndex"
@@ -60,7 +65,7 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
+              <img  src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
             </div>
           </div>
           <div id="account1" className="class-account class-account-common">
@@ -78,7 +83,7 @@ export default function Navbar() {
               <div>My Reviews</div>
               <div>Gift Cards</div>
               <div>Help</div>
-              <div>Sign Out</div>
+              {isAuth?<div onClick={handleSignout}>Sign Out</div>:<div>Sign in</div>}
             </div>
           </div>
           <div className="class-account class-account-common">
@@ -87,7 +92,7 @@ export default function Navbar() {
             </div>
             {/* <div>Lists</div> */}
             <div className="chevronup">
-              <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
+            <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
             <div
               className="account-dropdown-content"
@@ -101,18 +106,19 @@ export default function Navbar() {
           </div>
           <div
             id="cart1"
-            onClick={() => {
-              window.location.href = "/cart";
-            }}
             className="class-account"
           >
-            <div className="Cart__Icon-Image" style={{fontSize:" 25px"}}>
+            <div className="Cart__Icon-Image" style={{fontSize:" 25px",display:"flex",gap:"18px"}}>
               {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" /> */}
-              <FaShoppingCart/>
+              <Link to="/Cart">    <FaShoppingCart/></Link>
+              <Link to="/Cart">    <MdNotificationsActive /></Link>
+
             </div>
-            
+           
             {/* <div>Cart</div> */}
+
           </div>
+          <div></div>
         </div>
         <div className="section-div">
           <div>
@@ -142,9 +148,10 @@ export default function Navbar() {
           <div>
             <Link to="garland">Garlands</Link>
           </div>
+          {isAdmin?<div style={{fontWeight:"900",color:"red"}}><Link to="/admin">Admin</Link></div>:null}
         </div>
       </div>
-      {data.length>0 && <div style={{width:"63%",overflow:"scroll",height:"600px", zIndex:"3", display:"grid", gridTemplateColumns:"repeat(3,1fr)",gap:"20px", position:"absolute",left:"14%",top:"-25px", backgroundColor:"#FED7D7",margin:"auto"}} >
+      {data.length>0 && <div style={{width:"63%",overflow:"scroll",height:"600px", zIndex:"3", display:"grid", gridTemplateColumns:"repeat(3,1fr)",gap:"20px", position:"absolute",left:"14%",top:"-12px", backgroundColor:"#FED7D7",margin:"auto"}} >
         {data.length>0 && data.map((item)=>(
                 <div  key={item.id} style={{margin:"auto",paddingLeft:"20px"}}>
                  <div> <Icon className='heart'  cursor="pointer" m="5px" padding="2px"  w={6} h={5} border="1px solid grey" borderRadius="50%"  as={FiHeart}></Icon></div>

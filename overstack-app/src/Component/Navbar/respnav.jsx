@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import "./respnav.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function RespNav() {
   const [show, setShow] = useState(false);
+  const {isAdmin,isAuth}=useSelector((state)=>state)
+  const dispatch=useDispatch()
+  const handleSignout=()=>{
+    dispatch(logoutInitiate())
+  }
 
   return (
     <div className="header">
@@ -16,15 +23,13 @@ export default function RespNav() {
         </div>
         <div
           className="overstocklogo"
-          onClick={() => {
-            window.location.href = "/";
-          }}
+         
         >
-          <img
+            <Link to="/"><img
             className="overstockIndex"
-            src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
+         src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
             alt=""
-          />
+          /></Link> 
         </div>
         <div className="class-input">
           <div>
@@ -35,7 +40,7 @@ export default function RespNav() {
           </div>
         </div>
         <div id="account1" className="class-account class-account-common">
-          <Link href="/login">
+          <Link to="/login">
             {" "}
             <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
           </Link>
@@ -49,12 +54,22 @@ export default function RespNav() {
             <div>My Reviews</div>
             <div>Gift Cards</div>
             <div>Help</div>
-            <div>Sign Out</div>
+            {
+               isAuth?(
+                <div onClick={handleSignout}>
+                  sign Out
+                </div>
+               ):(
+                <div>
+                 <Link to="/login"> Sign In </Link>
+                </div>
+               )
+              }
           </div>
         </div>
         <div className="class-account class-account-common">
           <div>
-            <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
+          <Link to="/list">  <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" /></Link>
           </div>
         
           <div className="chevronup">
@@ -72,16 +87,14 @@ export default function RespNav() {
         </div>
         <div
           id="cart1"
-          onClick={() => {
-            window.location.href = "/cart";
-          }}
+         
           className="class-account"
         >
           <div className="Cart__Icon-Image" style={{fontSize:"25px"}}>
             {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" />
             
             */}
-            <FaShoppingCart/>
+          <Link to="/Cart">  <FaShoppingCart/></Link>
           </div>
           {/* <p style={{ margin: "auto" }}>{0}</p> */}
         </div>
@@ -92,32 +105,39 @@ export default function RespNav() {
         onClick={() => setShow(!show)}
       >
         <div>
-          <Link to="mug">Mugs</Link>
+          <Link to="/mug">Mugs</Link>
         </div>
         <div>
-          <Link to="cookingCutters">Cooking Cutters</Link>
+          <Link to="/cookingCutters">Cooking Cutters</Link>
         </div>
         <div>
-          <Link to="fryer">Air Fryers</Link>
+          <Link to="/fryer">Air Fryers</Link>
         </div>
         <div>
-          <Link to="mixers">Mixers</Link>
+          <Link to="/mixers">Mixers</Link>
         </div>
         <div>
-          <Link to="lamps">Lamps</Link>
+          <Link to="/lamps">Lamps</Link>
         </div>
         <div>
-          <Link to="towels">Towels</Link>
+          <Link to="/towels">Towels</Link>
         </div>
         <div>
-          <Link to="blankets">Blankets</Link>
+          <Link to="/blankets">Blankets</Link>
         </div>
         <div>
-          <Link to="tree">Tree Skirts</Link>
+          <Link to="/tree">Tree Skirts</Link>
         </div>
         <div>
-          <Link to="garland">Garlands</Link>
+          <Link to="/garland">Garlands</Link>
         </div>
+        {
+          isAdmin?(
+            <div style={{fontWeight:"bolder",color:"red"}}>
+              <Link to="/admin">Admin</Link>
+            </div>
+          ):null
+        }
       </div>
     </div>
   );

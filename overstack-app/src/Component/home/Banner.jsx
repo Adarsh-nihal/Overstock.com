@@ -1,4 +1,3 @@
-
 export const Banners = ({ src, title, subtitle }) => {
   return (
     <section id="banner">
@@ -13,3 +12,4 @@ export const Banners = ({ src, title, subtitle }) => {
     </section>
   );
 };
+
