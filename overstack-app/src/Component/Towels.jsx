@@ -19,7 +19,6 @@ import { useSelector } from "react-redux";
 const Towels = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
   const toast=useToast();
-
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/towels/${id}`)
