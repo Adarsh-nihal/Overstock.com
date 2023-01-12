@@ -7,9 +7,9 @@ import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function RespNav() {
   const [show, setShow] = useState(false);
-  const {isAdmin,isAuth}=useSelector((state)=>state)
-  const dispatch=useDispatch()
-  const handleSignout=()=>{
+  const { isAdmin, isAuth } = useSelector((state) => state)
+  const dispatch = useDispatch()
+  const handleSignout = () => {
     dispatch(logoutInitiate())
   }
 
@@ -23,13 +23,13 @@ export default function RespNav() {
         </div>
         <div
           className="overstocklogo"
-         
+
         >
-            <Link to="/"><img
+          <Link to="/"><img
             className="overstockIndex"
-         src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
+            src="https://i.postimg.cc/0yCKC2SV/svgexport-1.png"
             alt=""
-          /></Link> 
+          /></Link>
         </div>
         <div className="class-input">
           <div>
@@ -44,7 +44,7 @@ export default function RespNav() {
             {" "}
             <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
           </Link>
-     
+
           <div className="chevronup">
             <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
           </div>
@@ -55,23 +55,23 @@ export default function RespNav() {
             <div>Gift Cards</div>
             <div>Help</div>
             {
-               isAuth?(
+              isAuth ? (
                 <div onClick={handleSignout}>
                   sign Out
                 </div>
-               ):(
+              ) : (
                 <div>
-                 <Link to="/login"> Sign In </Link>
+                  <Link to="/login"> Sign In </Link>
                 </div>
-               )
-              }
+              )
+            }
           </div>
         </div>
         <div className="class-account class-account-common">
           <div>
-          <Link to="/list">  <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" /></Link>
+            <Link to="/list">  <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" /></Link>
           </div>
-        
+
           <div className="chevronup">
             <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
           </div>
@@ -87,14 +87,14 @@ export default function RespNav() {
         </div>
         <div
           id="cart1"
-         
+
           className="class-account"
         >
-          <div className="Cart__Icon-Image" style={{fontSize:"25px"}}>
+          <div className="Cart__Icon-Image" style={{ fontSize: "25px" }}>
             {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" />
             
             */}
-          <Link to="/Cart">  <FaShoppingCart/></Link>
+            <Link to="/Cart">  <FaShoppingCart /></Link>
           </div>
           {/* <p style={{ margin: "auto" }}>{0}</p> */}
         </div>
@@ -132,11 +132,11 @@ export default function RespNav() {
           <Link to="/garland">Garlands</Link>
         </div>
         {
-          isAdmin?(
-            <div style={{fontWeight:"bolder",color:"red"}}>
+          isAdmin ? (
+            <div style={{ fontWeight: "bolder", color: "red" }}>
               <Link to="/admin">Admin</Link>
             </div>
-          ):null
+          ) : null
         }
       </div>
     </div>
