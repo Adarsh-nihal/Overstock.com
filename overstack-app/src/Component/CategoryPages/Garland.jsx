@@ -18,21 +18,21 @@ import { useSelector } from "react-redux";
 
 const Garland = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
-  const toast=useToast();
+  const toast = useToast();
 
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/garland/${id}`)
       .then((res) => {
-      setData(data.filter((e)=>{
-      return e.id!==id
-    }));
-    toast({
-      title: "Delete Successfull.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+        setData(data.filter((e) => {
+          return e.id !== id
+        }));
+        toast({
+          title: "Delete Successfull.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -40,14 +40,10 @@ const Garland = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [color, setColor] = useState(false);
-
   let url = `https://stock-server.onrender.com/garland?_limit=12&_page=${page}`;
-
   const { loading, error, data, setData } = useFetch(url, page, location);
-
   const handleChange = (e) => {
     const { value } = e.target;
-
     axios
       .get("https://stock-server.onrender.com/garland", {
         params: {
@@ -62,16 +58,13 @@ const Garland = () => {
         console.log(r.data);
       });
   };
-
   const handlePageChange = (changeBy) => {
     setPage(page + changeBy);
   };
-
   const handleHeart = (id) => {
     setColor(!color);
     console.log(id);
   };
-
   return (
     <div className="Container">
       <h1>Garland</h1>
@@ -86,7 +79,6 @@ const Garland = () => {
           }}
         >
           <option value="Best Selling">Best Selling</option>
-
           <option name="price" value="asc">
             Price Low-High
           </option>
@@ -131,7 +123,6 @@ const Garland = () => {
               <span>Featured</span>
               <div style={{ display: "flex" }}>
                 <h1>${item.price}</h1>
-
                 <Link to={`/garland/${item.id}`}>
                   {" "}
                   <span className="icon">
@@ -183,13 +174,12 @@ const Garland = () => {
               </div>
               {isAdmin ? (
                 <div>
-                 <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                  <Button bg={"red"} width="60%" ml="20%" color="white" onClick={() => handleDelete(item.id)} >Delete</Button>
                 </div>
               ) : null}
             </div>
           ))}
       </div>
-
       {data.length > 0 && (
         <div
           style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}

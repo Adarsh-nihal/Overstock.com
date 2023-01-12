@@ -18,21 +18,20 @@ import { useSelector } from "react-redux";
 
 const Mixtures = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
-  const toast=useToast();
-
+  const toast = useToast();
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/mixers/${id}`)
       .then((res) => {
-      setData(data.filter((e)=>{
-      return e.id!==id
-    }));
-    toast({
-      title: "Delete Successfull.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+        setData(data.filter((e) => {
+          return e.id !== id
+        }));
+        toast({
+          title: "Delete Successfull.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -42,12 +41,9 @@ const Mixtures = () => {
   const [color, setColor] = useState(false);
 
   let url = `https://stock-server.onrender.com/mixers?_limit=12&_page=${page}`;
-
   const { loading, error, data, setData } = useFetch(url, page, location);
-
   const handleChange = (e) => {
     const { value } = e.target;
-
     axios
       .get("https://stock-server.onrender.com/mixers", {
         params: {
@@ -62,11 +58,9 @@ const Mixtures = () => {
         console.log(r.data);
       });
   };
-
   const handlePageChange = (changeBy) => {
     setPage(page + changeBy);
   };
-
   const handleHeart = (id) => {
     setColor(!color);
     console.log(id);
@@ -183,13 +177,12 @@ const Mixtures = () => {
               </div>
               {isAdmin ? (
                 <div>
-                 <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                  <Button bg={"red"} width="60%" ml="20%" color="white" onClick={() => handleDelete(item.id)} >Delete</Button>
                 </div>
               ) : null}
             </div>
           ))}
       </div>
-
       {data.length > 0 && (
         <div
           style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}

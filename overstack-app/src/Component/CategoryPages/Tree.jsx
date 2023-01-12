@@ -17,22 +17,22 @@ import { FiHeart } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
 const Tree = () => {
-  const {isAdmin} = useSelector((state) => state.isAdmin);
-  const toast=useToast();
+  const { isAdmin } = useSelector((state) => state.isAdmin);
+  const toast = useToast();
 
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/tree/${id}`)
       .then((res) => {
-      setData(data.filter((e)=>{
-      return e.id!==id
-    }));
-    toast({
-      title: "Delete Successfull.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+        setData(data.filter((e) => {
+          return e.id !== id
+        }));
+        toast({
+          title: "Delete Successfull.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -183,7 +183,7 @@ const Tree = () => {
               </div>
               {isAdmin ? (
                 <div>
-                 <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                  <Button bg={"red"} width="60%" ml="20%" color="white" onClick={() => handleDelete(item.id)} >Delete</Button>
                 </div>
               ) : null}
             </div>
