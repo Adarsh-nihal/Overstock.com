@@ -2,25 +2,25 @@ import "./footer.css";
 
 export const Footer = () => {
     return (
-     <div>
-        <div id="footerContainer">
-                    <div class = "box1Footer">
-                        <div class= "footerMediaDiv">
-                            <div class="footerDiv_1">
-                                <a class="paraInfoFooter">My Account</a>
-                                <a class="paraInfoFooter">Email Preferences</a>
-                                <a class="paraInfoFooter">International Help</a>
-                                <a class="paraInfoFooter">Privacy Policy</a>
-                                <a class="paraInfoFooter">Accessibility</a>
-                                <a class="paraInfoFooter">Sales and Deals</a>
-                            </div>
-                            <div class="footerDiv_2">
+        <div>
+            <div id="footerContainer">
+                <div class="box1Footer">
+                    <div class="footerMediaDiv">
+                        <div class="footerDiv_1">
+                            <a class="paraInfoFooter">My Account</a>
+                            <a class="paraInfoFooter">Email Preferences</a>
+                            <a class="paraInfoFooter">International Help</a>
+                            <a class="paraInfoFooter">Privacy Policy</a>
+                            <a class="paraInfoFooter">Accessibility</a>
+                            <a class="paraInfoFooter">Sales and Deals</a>
+                        </div>
+                        <div class="footerDiv_2">
                             <a class="paraInfoFooter">Terms & Conditions</a>
                             <a class="paraInfoFooter">Privacy Policy</a>
                             <a class="paraInfoFooter">*Promotion Terms</a>
                             <a class="paraInfoFooter">Return Policy</a>
-                            </div>
                         </div>
+                    </div>
                     <div class="infoDiv">
                         <a class="headInfoFooter">MY ACCOUNT</a>
                         <a class="paraInfoFooter">Orders & Returns</a>
@@ -51,20 +51,20 @@ export const Footer = () => {
                         <a class="paraInfoFooter">Clearance</a>
                         <a class="paraInfoFooter">New Arrivals</a>
                     </div>
-                    </div>
-                <div class = "box2Footer">
-                <a class = "mediaAnchor">Ship to:</a>
-                <div class = "copyrightSec">
-                    <p> © Copyright 2021, Overstock.com®, Inc.<br />799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446 </p>
                 </div>
-                <div class = "privacySec">
+                <div class="box2Footer">
+                    <a class="mediaAnchor">Ship to:</a>
+                    <div class="copyrightSec">
+                        <p> © Copyright 2021, Overstock.com®, Inc.<br />799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446 </p>
+                    </div>
+                    <div class="privacySec">
                         <a>Privacy</a>
                         <a>PolicyTerms & Conditions</a>
                         <a>*Promotion Terms</a>
                         <a>Ship to:</a>
+                    </div>
                 </div>
-                </div>
-                </div>
-                </div>
+            </div>
+        </div>
     )
-    }    
+}    
