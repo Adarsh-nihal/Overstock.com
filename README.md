@@ -9,7 +9,7 @@ whole website that we have created are responsive as well.
 
 
 ## 🔗 Links
-netlify link - https://overstock-com-pi.vercel.app/
+netlify link -https://overstock-pi.netlify.app/
 
 github - https://github.com/Adarsh-nihal/Overstock.com 
   
