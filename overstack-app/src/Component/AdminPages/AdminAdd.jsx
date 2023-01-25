@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./AdminAdd.css";
 
 const AdminAdd = () => {
-const[value,setValue]=useState("")
+const[Category,setCategory]=useState("")
 const [name,setName]=useState("")
 const [price,setPrice]=useState("")
 const [image,setUrl]=useState("")
@@ -18,12 +18,17 @@ const toast=useToast()
     const handleSubmit = () =>{
       const payload={
          name:name,
+         category:Category,
          image:image,
          price:price,
          count:2
       }
-      axios.post(`https://stock-server.onrender.com/${value}`,payload)
+      axios.post(`https://stock-server.onrender.com/products`,payload)
       .then((r)=>{
+        setCategory("");
+        setPrice("");
+        setName("");
+        setUrl("");
         toast({
           title: 'Added',
           status: 'success',
@@ -33,12 +38,6 @@ const toast=useToast()
       })
       .catch((e)=>{
         console.log(e)
-        // toast({
-        //   title: `error toast`,
-        //   status: `error adding data`,
-        //   duration:3000,
-        //   isClosable: true,
-        // })
       })
      
     }
@@ -46,7 +45,7 @@ const toast=useToast()
     <div style={{ marginTop: "140px"}}>
       <h1 style={{fontWeight:"700",fontSize:"30px",fontFamily:"sans-serif",textAlign:"center"}}>Add Products</h1>
     <div className='admin_add'>
-        <select value={value}  onChange={(e)=>setValue(e.target.value)} style={{width:"100%",padding:"6px",fontSize:"15px"}} >
+        <select value={Category}  onChange={(e)=>setCategory(e.target.value)} style={{width:"100%",padding:"6px",fontSize:"15px"}} >
             <option value="">Select</option>
             <option value="mugs">Mugs</option>
             <option value="cookingCutters">Cooking Cutters</option>
