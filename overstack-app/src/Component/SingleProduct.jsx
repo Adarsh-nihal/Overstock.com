@@ -50,7 +50,7 @@ const handleCart=()=>{
         <div className='btn'>
         <Button onClick={()=>navigate(-1)} bg="grey">Go Back</Button>
           <Button onClick={()=>{
-            isAuth?handleCart(item.id):navigate("/Login")
+            isAuth?handleCart(item.id):navigate("/login")
           }} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
