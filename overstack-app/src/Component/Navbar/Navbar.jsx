@@ -67,6 +67,7 @@ export default function Navbar() {
             </div>
             <div>
               <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
+              <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
             </div>
           </div>
           <div id="account1" className="class-account class-account-common">
@@ -101,6 +102,7 @@ export default function Navbar() {
             {/* <div>Lists</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
+              <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
             <div
               className="account-dropdown-content"
@@ -127,6 +129,7 @@ export default function Navbar() {
                 <MdNotificationsActive />
               </Link>
             </div>
+
 
             {/* <div>Cart</div> */}
           </div>

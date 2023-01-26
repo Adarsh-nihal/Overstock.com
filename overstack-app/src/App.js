@@ -6,7 +6,6 @@ import { Footer } from './Component/home/footer';
 import RespNav from "./Component/Navbar/respnav"
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-// import privateRoute from './Component/private/privateRoute';
 function App() {
  
   return (
@@ -19,6 +18,7 @@ function App() {
        <RespNav/>
       </div>
       <MainRoutes />
+     
      
       <Footer/>
  </div>

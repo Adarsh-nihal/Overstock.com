@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:overstack-app/src/Component/listPage/MainList.css
 .main_one{
     display: flex;
     justify-content: space-between;
@@ -52,4 +54,58 @@
         border: 1px solid gray;
     
     }
+========
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+.main_one {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.main_one button {
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.main_list_m {
+  display: flex;
+  grid-gap: 10px;
+}
+.main_list {
+  width: 200px;
+  height: 240px;
+  border: 1px solid gray;
+}
+.like_product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  grid-gap: 10px;
+}
+.like_product div {
+  background-color: rgb(207, 198, 198);
+}
+
+@media only screen and (min-width: 250px) and (max-width: 500px) {
+  .main_one {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .main_list_m {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+  .main_list {
+    width: 100px;
+    height: 80px;
+    border: 1px solid gray;
+  }
+<<<<<<< HEAD
+>>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d:overstack-app/src/Component/MainList.css
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
 }

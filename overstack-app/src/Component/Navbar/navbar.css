@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
 body {
   margin: 0px;
   padding: 0px;
@@ -109,12 +112,18 @@ img {
   border-radius: 4px 0 0 4px;
   background-color: #f9fafb;
   font-size: 16px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
 }
 .header .class-input {
   display: flex;
   margin-top: 7px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
 }
 .header .class-input > div:nth-child(1) {
   width: 100%;
@@ -223,8 +232,11 @@ a {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
 #cart1 {
   /* border: 1px solid; */
   width: 3vw;

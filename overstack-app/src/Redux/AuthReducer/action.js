@@ -84,6 +84,7 @@ const registerInitiate = (email,password) =>{
 };
 const loginInitiate = (email,password) =>{
     
+    
     return function (dispatch){
         dispatch(userLoginRquest());
         auth.signInWithEmailAndPassword(email.trim(),password).then((res)=>{
@@ -94,9 +95,12 @@ const loginInitiate = (email,password) =>{
             dispatch(userLoginFailure())
             
         })
+            dispatch(userLoginFailure())
+            
+        }
     }
     
-};
+
 const logoutInitiate = () =>{
     return function (dispatch){
         dispatch(userLogutRequst());
