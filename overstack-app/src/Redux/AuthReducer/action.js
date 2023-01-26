@@ -88,7 +88,7 @@ const loginInitiate = (email,password) =>{
         dispatch(userLoginRquest());
         auth.signInWithEmailAndPassword(email.trim(),password).then((res)=>{
             console.log(res);
-            dispatch(userLoginSuccess(res.user.uid));
+            dispatch(userLoginSuccess(email.trim()));
         }).catch((er)=>{
             console.log(er);
             dispatch(userLoginFailure())
