@@ -122,7 +122,7 @@ const Cart = () => {
                 setDiscount(15)
                 setSum(sum*0.85)
               }
-            })
+            },3000)
           }} />
           <div className="cart_one">
             <div className="cart_two">
