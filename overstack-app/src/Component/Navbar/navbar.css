@@ -1,3 +1,4 @@
+
 body {
   margin: 0px;
   padding: 0px;
@@ -108,10 +109,12 @@ img {
   border-radius: 4px 0 0 4px;
   background-color: #f9fafb;
   font-size: 16px;
+
 }
 .header .class-input {
   display: flex;
   margin-top: 7px;
+
 }
 .header .class-input > div:nth-child(1) {
   width: 100%;
@@ -219,6 +222,8 @@ a {
   color: black;
   text-decoration: none;
 }
+
+
 
 #cart1 {
   /* border: 1px solid; */
