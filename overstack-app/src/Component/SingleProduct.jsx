@@ -6,8 +6,10 @@ import { saveData } from './Utils/LocalStorage';
 import {MdAddShoppingCart } from 'react-icons/md'
 
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 const  SingleProduct = () => {
   const navigate=useNavigate()
+  const {isAuth}=useSelector((state)=>state)
   const toast=useToast()
     const {id}=useParams()
     console.log(id)
@@ -47,7 +49,9 @@ const handleCart=()=>{
 
         <div className='btn'>
         <Button onClick={()=>navigate(-1)} bg="grey">Go Back</Button>
-          <Button onClick={()=>handleCart(item.id)} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
+          <Button onClick={()=>{
+            isAuth?handleCart(item.id):navigate("/Login")
+          }} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
       </div>

@@ -13,39 +13,43 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/mug" element={<Products category={"mugs"}/>} />
-      <Route path="/cookingCutters" element={<Products category={"cutters"}/>} />
-      <Route path="/mixers" element={<Products category={"mixers"}/>} />
-      <Route path="/fryer" element={<Products category={"fryers"}/>} />
-      <Route path="/lamps" element={<Products category={"lamps"}/>} />
-      <Route path="/towels" element={<Products category={"towels"}/>} />
-      <Route path="/blankets" element={<Products category={"blankets"}/>} />
-      <Route path="/tree" element={<Products category={"tree"}/>}></Route>
-      <Route path="/garland" element={<Products category={"garland"}/>} />
-      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/mug" element={<Products category={"mugs"} />} />
+      <Route
+        path="/cookingCutters"
+        element={<Products category={"cutters"} />}
+      />
+      <Route path="/mixers" element={<Products category={"mixers"} />} />
+      <Route path="/fryer" element={<Products category={"fryers"} />} />
+      <Route path="/lamps" element={<Products category={"lamps"} />} />
+      <Route path="/towels" element={<Products category={"towels"} />} />
+      <Route path="/blankets" element={<Products category={"blankets"} />} />
+      <Route path="/tree" element={<Products category={"tree"} />}></Route>
+      <Route path="/garland" element={<Products category={"garland"} />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
-      <Route path="/Cart" element={<Cart />} />
+      <Route
+        path="/Cart"
+        element={
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        }
+      />
+
+      {/* Admin Pages */}
+
       <Route
         path="/admin"
         element={
           <AdminPrivate>
-            <AdminAdd/>
+            <AdminAdd />
           </AdminPrivate>
-         
         }
       />
 
       {/*  single pages with private Route */}
 
-      <Route
-        path="/products/:id"
-        element={
-          <PrivateRoute>
-            <SingleProduct />
-          </PrivateRoute>
-        }
-      />
-      
+      <Route path="/products/:id" element={<SingleProduct />} />
     </Routes>
   );
 };
