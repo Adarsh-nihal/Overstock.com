@@ -211,7 +211,7 @@ export default function Navbar() {
                 <div style={{ display: "flex" }}>
                   <h1>INR {item.price}</h1>
 
-                  <Link to={`/mugs/${item.id}`}>
+                  <Link to={`/products/${item.id}`}>
                     {" "}
                     <span
                       onClick={() => setData([])}
