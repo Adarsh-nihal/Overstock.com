@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {useParams,Link } from "react-router-dom";
+import {useParams,Link, useNavigate } from "react-router-dom";
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Button, Icon, useToast } from '@chakra-ui/react'
 import { saveData } from './Utils/LocalStorage';
@@ -7,6 +7,7 @@ import {MdAddShoppingCart } from 'react-icons/md'
 
 import axios from 'axios';
 const  SingleProduct = () => {
+  const navigate=useNavigate()
   const toast=useToast()
     const {id}=useParams()
     console.log(id)
@@ -45,7 +46,7 @@ const handleCart=()=>{
         <div className='shop'><h3> <CheckCircleIcon/>Free Shipping</h3></div>
 
         <div className='btn'>
-        <Link to="/blankets"><Button bg="grey">Go Back</Button></Link> 
+        <Button onClick={()=>navigate(-1)} bg="grey">Go Back</Button>
           <Button onClick={()=>handleCart(item.id)} ><Icon as={MdAddShoppingCart} mr="10px" />  Add to Cart</Button>
         </div>
         </div>
