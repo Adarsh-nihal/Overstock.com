@@ -18,20 +18,20 @@ import { useSelector } from "react-redux";
 
 const Fryers = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
-  const toast=useToast();
+  const toast = useToast();
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/fryers/${id}`)
       .then((res) => {
-      setData(data.filter((e)=>{
-      return e.id!==id
-    }));
-    toast({
-      title: "Delete Successfull.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+        setData(data.filter((e) => {
+          return e.id !== id
+        }));
+        toast({
+          title: "Delete Successfull.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -39,14 +39,10 @@ const Fryers = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [color, setColor] = useState(false);
-
   let url = `https://stock-server.onrender.com/fryers?_limit=12&_page=${page}`;
-
   const { loading, error, data, setData } = useFetch(url, page, location);
-
   const handleChange = (e) => {
     const { value } = e.target;
-
     axios
       .get("https://stock-server.onrender.com/fryers", {
         params: {
@@ -61,16 +57,13 @@ const Fryers = () => {
         console.log(r.data);
       });
   };
-
   const handlePageChange = (changeBy) => {
     setPage(page + changeBy);
   };
-
   const handleHeart = (id) => {
     setColor(!color);
     console.log(id);
   };
-
   return (
     <div className="Container">
       <h1>Fryers</h1>
@@ -85,7 +78,6 @@ const Fryers = () => {
           }}
         >
           <option value="Best Selling">Best Selling</option>
-
           <option name="price" value="asc">
             Price Low-High
           </option>
@@ -130,7 +122,6 @@ const Fryers = () => {
               <span>Featured</span>
               <div style={{ display: "flex" }}>
                 <h1>${item.price}</h1>
-
                 <Link to={`/fryers/${item.id}`}>
                   {" "}
                   <span className="icon">
@@ -169,7 +160,6 @@ const Fryers = () => {
                   <img src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                 </div>
               )}
-
               <div>
                 <p>{item.name}</p>
               </div>
@@ -182,13 +172,12 @@ const Fryers = () => {
               </div>
               {isAdmin ? (
                 <div>
-                 <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                  <Button bg={"red"} width="60%" ml="20%" color="white" onClick={() => handleDelete(item.id)} >Delete</Button>
                 </div>
               ) : null}
             </div>
           ))}
       </div>
-
       {data.length > 0 && (
         <div
           style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}

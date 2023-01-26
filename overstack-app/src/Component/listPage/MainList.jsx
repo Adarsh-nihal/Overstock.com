@@ -13,22 +13,22 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useState } from "react";
-const MainList = ({edit,handleDisplay}) => {
+const MainList = ({ edit, handleDisplay }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let listArr = ["FAVORITES", "SAVE FOR LATTER","fiusaoh"];
+  let listArr = ["FAVORITES", "SAVE FOR LATTER", "fiusaoh"];
   const btnRef = React.useRef();
-  const [display,setDisplay] = useState();
-  const [edit2,setEdit2] = useState(true);
-  const handleSave = () =>{
-      if(display){
-        setEdit2(false);
-        handleDisplay(display);
-      }else{
-        alert('There is nothing in the display name');
-        return
-      }
+  const [display, setDisplay] = useState();
+  const [edit2, setEdit2] = useState(true);
+  const handleSave = () => {
+    if (display) {
+      setEdit2(false);
+      handleDisplay(display);
+    } else {
+      alert('There is nothing in the display name');
+      return
+    }
   }
- 
+
 
   return (
     <div>
@@ -40,24 +40,24 @@ const MainList = ({edit,handleDisplay}) => {
       </div>
       <hr />
       {edit && edit2 && <div>
-    
-        <Input w="50%" type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
+
+        <Input w="50%" type="text" value={display} onChange={(e) => setDisplay(e.target.value)} placeholder='Displayname' />
         <Button onClick={handleSave}>Save</Button>
       </div>}
       {!edit && edit2 && <div className="main_list_m">
-      {listArr.map((item) => {
-        return (
-          <div className="main_list">
-            <div className="like_product">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+        {listArr.map((item) => {
+          return (
+            <div className="main_list">
+              <div className="like_product">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div>{item}</div>
             </div>
-            <div>{item}</div>
-          </div>
-        );
-      })}
+          );
+        })}
       </div>}
 
       <Drawer

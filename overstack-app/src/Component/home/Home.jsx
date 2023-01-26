@@ -8,58 +8,58 @@ import { Banners } from "./Banner"
 import { StaticProd } from "./StaticProduct"
 
 import { ImageSlider } from "./HomeCrousel"
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 // import AdminAdd from "../AdminPages/AdminAdd";
 export const Home = () => {
-const isAdmin  = useSelector((state)=>state.isAdmin);
-    const imagess = [
-        {
-          id: 1,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920",
-          heading: "Storage With Style",
-          subhead:
-            "Keep your space neat with decorative storage and organization essentials.",
-        },
-        {
-          id: 2,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_3.jpg?imwidth=1920",
-          heading: "New Arrivals : Tables",
-          subhead:
-            "Shop the latest living room with new coffee, console, sofa, and end tables.",
-        },
-        {
-          id: 3,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
-          heading: "Top Rated Lightning",
-          subhead:
-            "Brighten up your new year space with customer favorite lighting & ceiling fans.",
-        },
-        {
-          id: 3,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
-          heading: "Chic Shag Rugs​",
-          subhead: "Opt for classic comforts with plush and pretty shag rugs.",
-        },
-        {
-          id: 3,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
-    
-          heading: "Top-Rated Mattresses",
-          subhead:
-            "Stop counting sheep & start getting sleep with great deals on great mattresses.",
-        },
-        {
-          id: 3,
-          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_1.jpg?imwidth=1920",
-          heading: "Top-Rated Mattresses",
-          subhead:
-            "Stop counting sheep & start getting sleep with great deals on great mattresses.",
-        },
-      ];
+  const isAdmin = useSelector((state) => state.isAdmin);
+  const imagess = [
+    {
+      id: 1,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920",
+      heading: "Storage With Style",
+      subhead:
+        "Keep your space neat with decorative storage and organization essentials.",
+    },
+    {
+      id: 2,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_3.jpg?imwidth=1920",
+      heading: "New Arrivals : Tables",
+      subhead:
+        "Shop the latest living room with new coffee, console, sofa, and end tables.",
+    },
+    {
+      id: 3,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+      heading: "Top Rated Lightning",
+      subhead:
+        "Brighten up your new year space with customer favorite lighting & ceiling fans.",
+    },
+    {
+      id: 3,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+      heading: "Chic Shag Rugs​",
+      subhead: "Opt for classic comforts with plush and pretty shag rugs.",
+    },
+    {
+      id: 3,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
 
-      
+      heading: "Top-Rated Mattresses",
+      subhead:
+        "Stop counting sheep & start getting sleep with great deals on great mattresses.",
+    },
+    {
+      id: 3,
+      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_1.jpg?imwidth=1920",
+      heading: "Top-Rated Mattresses",
+      subhead:
+        "Stop counting sheep & start getting sleep with great deals on great mattresses.",
+    },
+  ];
 
-      // --------------Home Static Products -------------///
+
+
+  // --------------Home Static Products -------------///
   const Static_Products = [
     {
       src: "https://i.postimg.cc/DzNmvYz8/11192021-Cat-Silo-Furniture.png",
@@ -136,16 +136,16 @@ const isAdmin  = useSelector((state)=>state.isAdmin);
       title: "Select Lighting & Ceiling Fans",
     },
   ];
-    return (
-        <>
-            <Hero />
-            <Deals offers={Offer_Deals} />
-            {/* <Banners src = {"https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920"} title ={"Select Lighting & Ceiling Fans"} subtitle = {"Select Lighting & Ceiling Fans"} /> */}
-            
-            <StaticProd prod = {Static_Products} />
-            <ImageSlider imagess = {imagess} />
+  return (
+    <>
+      <Hero />
+      <Deals offers={Offer_Deals} />
+      {/* <Banners src = {"https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920"} title ={"Select Lighting & Ceiling Fans"} subtitle = {"Select Lighting & Ceiling Fans"} /> */}
 
-        </>
-    )
+      <StaticProd prod={Static_Products} />
+      <ImageSlider imagess={imagess} />
+
+    </>
+  )
 
 }

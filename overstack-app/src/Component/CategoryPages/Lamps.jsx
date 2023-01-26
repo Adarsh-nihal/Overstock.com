@@ -18,21 +18,20 @@ import { useSelector } from "react-redux";
 
 const Lamps = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
-  const toast=useToast();
-
+  const toast = useToast();
   const handleDelete = (id) => {
     axios
       .delete(`https://stock-server.onrender.com/lamps/${id}`)
       .then((res) => {
-      setData(data.filter((e)=>{
-      return e.id!==id
-    }));
-    toast({
-      title: "Delete Successfull.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+        setData(data.filter((e) => {
+          return e.id !== id
+        }));
+        toast({
+          title: "Delete Successfull.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -40,14 +39,10 @@ const Lamps = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [color, setColor] = useState(false);
-
   let url = `https://stock-server.onrender.com/lamps?_limit=12&_page=${page}`;
-
   const { loading, error, data, setData } = useFetch(url, page, location);
-
   const handleChange = (e) => {
     const { value } = e.target;
-
     axios
       .get("https://stock-server.onrender.com/lamps", {
         params: {
@@ -62,16 +57,13 @@ const Lamps = () => {
         console.log(r.data);
       });
   };
-
   const handlePageChange = (changeBy) => {
     setPage(page + changeBy);
   };
-
   const handleHeart = (id) => {
     setColor(!color);
     console.log(id);
   };
-
   return (
     <div className="Container">
       <h1>Lamps</h1>
@@ -86,7 +78,6 @@ const Lamps = () => {
           }}
         >
           <option value="Best Selling">Best Selling</option>
-
           <option name="price" value="asc">
             Price Low-High
           </option>
@@ -183,7 +174,7 @@ const Lamps = () => {
               </div>
               {isAdmin ? (
                 <div>
-                 <Button bg={"red"} width="60%" ml="20%" color="white" onClick={()=>handleDelete(item.id)} >Delete</Button>
+                  <Button bg={"red"} width="60%" ml="20%" color="white" onClick={() => handleDelete(item.id)} >Delete</Button>
                 </div>
               ) : null}
             </div>

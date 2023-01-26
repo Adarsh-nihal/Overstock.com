@@ -45,9 +45,9 @@ const MainRoutes = () => {
         path="/admin"
         element={
           <AdminPrivate>
-            <AdminAdd/>
+            <AdminAdd />
           </AdminPrivate>
-         
+
         }
       />
 
