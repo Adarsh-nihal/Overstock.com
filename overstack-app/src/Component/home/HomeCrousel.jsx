@@ -3,24 +3,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect,useState } from "react";
 import "./Home.css";
-import { useMediaQuery } from "@chakra-ui/react";
+import {  useMediaQuery } from "@chakra-ui/react";
 
 export const ImageSlider = ({ imagess }) => {
 
-  const [count, setCount] = useState(4)
+ const [count,setCount]=useState(4)
 
-  function SlideCount() {
-    if (useMediaQuery(`(media(min-width:900px))`)) {
-      return 4
-    }
-    else {
-      return 2
-    }
-  }
+ function SlideCount(){
+  if(useMediaQuery(`(media(min-width:900px))`)){
+    return 4
+   }
+   else{
+    return 2
+   }
+ }
 
-
+ 
 
   const settings = {
     infinite: true,
