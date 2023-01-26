@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 
 export const Banners = ({ src, title, subtitle }) => {
     return (
@@ -13,6 +16,7 @@ export const Banners = ({ src, title, subtitle }) => {
         </div>
       </section>
     );
+<<<<<<< HEAD
   };
 =======
 export const Banners = ({ src, title, subtitle }) => {
@@ -31,3 +35,6 @@ export const Banners = ({ src, title, subtitle }) => {
 };
 
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+  };
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11

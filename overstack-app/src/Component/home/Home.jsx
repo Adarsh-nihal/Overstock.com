@@ -9,6 +9,7 @@ import { StaticProd } from "./StaticProduct"
 
 import { ImageSlider } from "./HomeCrousel"
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {useSelector} from "react-redux";
 // import AdminAdd from "../AdminPages/AdminAdd";
 export const Home = () => {
@@ -63,58 +64,67 @@ const isAdmin  = useSelector((state)=>state.isAdmin);
       // --------------Home Static Products -------------///
 =======
 import { useSelector } from "react-redux";
+=======
+import {useSelector} from "react-redux";
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 // import AdminAdd from "../AdminPages/AdminAdd";
 export const Home = () => {
-  const isAdmin = useSelector((state) => state.isAdmin);
-  const imagess = [
-    {
-      id: 1,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920",
-      heading: "Storage With Style",
-      subhead:
-        "Keep your space neat with decorative storage and organization essentials.",
-    },
-    {
-      id: 2,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_3.jpg?imwidth=1920",
-      heading: "New Arrivals : Tables",
-      subhead:
-        "Shop the latest living room with new coffee, console, sofa, and end tables.",
-    },
-    {
-      id: 3,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
-      heading: "Top Rated Lightning",
-      subhead:
-        "Brighten up your new year space with customer favorite lighting & ceiling fans.",
-    },
-    {
-      id: 3,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
-      heading: "Chic Shag Rugs​",
-      subhead: "Opt for classic comforts with plush and pretty shag rugs.",
-    },
-    {
-      id: 3,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+const isAdmin  = useSelector((state)=>state.isAdmin);
+    const imagess = [
+        {
+          id: 1,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_2.jpg?imwidth=1920",
+          heading: "Storage With Style",
+          subhead:
+            "Keep your space neat with decorative storage and organization essentials.",
+        },
+        {
+          id: 2,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_3.jpg?imwidth=1920",
+          heading: "New Arrivals : Tables",
+          subhead:
+            "Shop the latest living room with new coffee, console, sofa, and end tables.",
+        },
+        {
+          id: 3,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+          heading: "Top Rated Lightning",
+          subhead:
+            "Brighten up your new year space with customer favorite lighting & ceiling fans.",
+        },
+        {
+          id: 3,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+          heading: "Chic Shag Rugs​",
+          subhead: "Opt for classic comforts with plush and pretty shag rugs.",
+        },
+        {
+          id: 3,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_5.jpg?imwidth=1920",
+    
+          heading: "Top-Rated Mattresses",
+          subhead:
+            "Stop counting sheep & start getting sleep with great deals on great mattresses.",
+        },
+        {
+          id: 3,
+          src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_1.jpg?imwidth=1920",
+          heading: "Top-Rated Mattresses",
+          subhead:
+            "Stop counting sheep & start getting sleep with great deals on great mattresses.",
+        },
+      ];
 
-      heading: "Top-Rated Mattresses",
-      subhead:
-        "Stop counting sheep & start getting sleep with great deals on great mattresses.",
-    },
-    {
-      id: 3,
-      src: "https://ak1.ostkcdn.com/img/mxc/03282022_HP_Editorial_Frame_1.jpg?imwidth=1920",
-      heading: "Top-Rated Mattresses",
-      subhead:
-        "Stop counting sheep & start getting sleep with great deals on great mattresses.",
-    },
-  ];
+      
 
+<<<<<<< HEAD
 
 
   // --------------Home Static Products -------------///
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+      // --------------Home Static Products -------------///
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
   const Static_Products = [
     {
       src: "https://i.postimg.cc/DzNmvYz8/11192021-Cat-Silo-Furniture.png",
@@ -192,6 +202,9 @@ export const Home = () => {
     },
   ];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
     return (
         <>
             <Hero />
@@ -200,6 +213,7 @@ export const Home = () => {
             
             <StaticProd prod = {Static_Products} />
             <ImageSlider imagess = {imagess} />
+<<<<<<< HEAD
 
         </>
     )
@@ -216,5 +230,10 @@ export const Home = () => {
     </>
   )
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+
+        </>
+    )
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 
 }

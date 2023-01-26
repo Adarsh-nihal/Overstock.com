@@ -6,6 +6,9 @@ export const Hero = () => {
       <div className="row">
         <div className="col">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
           
             <div className="banner">
               <div className="bannerDiv">
@@ -21,6 +24,7 @@ export const Hero = () => {
                     src="https://overstock-clone.s3.ap-south-1.amazonaws.com/01102022-HP-A1-1400x550_INTL.svg"
                   />
                 </div>
+<<<<<<< HEAD
               </div>
             </div>
          
@@ -44,6 +48,11 @@ export const Hero = () => {
           </div>
 
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+              </div>
+            </div>
+         
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
         </div>
       </div>
     </div>

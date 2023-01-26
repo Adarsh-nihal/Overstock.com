@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 
 export const Deals = ({ offers }) => {
     return (
@@ -42,6 +45,7 @@ export const Deals = ({ offers }) => {
         </div>
       </div>
     );
+<<<<<<< HEAD
   };
 =======
 export const Deals = ({ offers }) => {
@@ -88,3 +92,6 @@ export const Deals = ({ offers }) => {
   );
 };
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+  };
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11

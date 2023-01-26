@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 const MainList = ({edit,handleDisplay}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   let listArr = ["FAVORITES", "SAVE FOR LATTER","fiusaoh"];
@@ -36,22 +37,29 @@ const MainList = ({edit,handleDisplay}) => {
  
 =======
 const MainList = ({ edit, handleDisplay }) => {
+=======
+const MainList = ({edit,handleDisplay}) => {
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let listArr = ["FAVORITES", "SAVE FOR LATTER", "fiusaoh"];
+  let listArr = ["FAVORITES", "SAVE FOR LATTER","fiusaoh"];
   const btnRef = React.useRef();
-  const [display, setDisplay] = useState();
-  const [edit2, setEdit2] = useState(true);
-  const handleSave = () => {
-    if (display) {
-      setEdit2(false);
-      handleDisplay(display);
-    } else {
-      alert('There is nothing in the display name');
-      return
-    }
+  const [display,setDisplay] = useState();
+  const [edit2,setEdit2] = useState(true);
+  const handleSave = () =>{
+      if(display){
+        setEdit2(false);
+        handleDisplay(display);
+      }else{
+        alert('There is nothing in the display name');
+        return
+      }
   }
+<<<<<<< HEAD
 
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+ 
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 
   return (
     <div>
@@ -63,6 +71,7 @@ const MainList = ({ edit, handleDisplay }) => {
       </div>
       <hr />
       {edit && edit2 && <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
     
         <Input w="50%" type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
@@ -85,23 +94,32 @@ const MainList = ({ edit, handleDisplay }) => {
 =======
 
         <Input w="50%" type="text" value={display} onChange={(e) => setDisplay(e.target.value)} placeholder='Displayname' />
+=======
+    
+        <Input w="50%" type="text" value={display} onChange={(e)=>setDisplay(e.target.value)} placeholder='Displayname'/>
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
         <Button onClick={handleSave}>Save</Button>
       </div>}
       {!edit && edit2 && <div className="main_list_m">
-        {listArr.map((item) => {
-          return (
-            <div className="main_list">
-              <div className="like_product">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div>{item}</div>
+      {listArr.map((item) => {
+        return (
+          <div className="main_list">
+            <div className="like_product">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
+<<<<<<< HEAD
           );
         })}
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+            <div>{item}</div>
+          </div>
+        );
+      })}
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
       </div>}
 
       <Drawer

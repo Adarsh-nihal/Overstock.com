@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect,useState } from "react";
 import "./Home.css";
 import {  useMediaQuery } from "@chakra-ui/react";
@@ -24,24 +25,30 @@ export const ImageSlider = ({ imagess }) => {
  
 =======
 import React, { useEffect, useState } from "react";
+=======
+import React, { useEffect,useState } from "react";
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 import "./Home.css";
-import { useMediaQuery } from "@chakra-ui/react";
+import {  useMediaQuery } from "@chakra-ui/react";
 
 export const ImageSlider = ({ imagess }) => {
 
-  const [count, setCount] = useState(4)
+ const [count,setCount]=useState(4)
 
-  function SlideCount() {
-    if (useMediaQuery(`(media(min-width:900px))`)) {
-      return 4
-    }
-    else {
-      return 2
-    }
-  }
+ function SlideCount(){
+  if(useMediaQuery(`(media(min-width:900px))`)){
+    return 4
+   }
+   else{
+    return 2
+   }
+ }
 
-
+<<<<<<< HEAD
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+ 
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
 
   const settings = {
     infinite: true,

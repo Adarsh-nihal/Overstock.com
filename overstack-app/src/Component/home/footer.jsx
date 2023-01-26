@@ -3,7 +3,10 @@ import "./footer.css";
 export const Footer = () => {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<<< HEAD:overstack-app/src/Component/home/footer.jsx
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
      <div>
         <div id="footerContainer">
                     <div class = "box1Footer">
@@ -17,6 +20,7 @@ export const Footer = () => {
                                 <a class="paraInfoFooter">Sales and Deals</a>
                             </div>
                             <div class="footerDiv_2">
+<<<<<<< HEAD
 ========
 =======
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
@@ -37,10 +41,13 @@ export const Footer = () => {
 >>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d:overstack-app/src/Component/footer.jsx
 =======
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
                             <a class="paraInfoFooter">Terms & Conditions</a>
                             <a class="paraInfoFooter">Privacy Policy</a>
                             <a class="paraInfoFooter">*Promotion Terms</a>
                             <a class="paraInfoFooter">Return Policy</a>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<<< HEAD:overstack-app/src/Component/home/footer.jsx
                             </div>
@@ -53,6 +60,10 @@ export const Footer = () => {
                         </div>
                     </div>
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+                            </div>
+                        </div>
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
                     <div class="infoDiv">
                         <a class="headInfoFooter">MY ACCOUNT</a>
                         <a class="paraInfoFooter">Orders & Returns</a>
@@ -84,6 +95,7 @@ export const Footer = () => {
                         <a class="paraInfoFooter">New Arrivals</a>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<<< HEAD:overstack-app/src/Component/home/footer.jsx
                     </div>
                 <div class = "box2Footer">
@@ -106,10 +118,20 @@ export const Footer = () => {
 >>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d:overstack-app/src/Component/footer.jsx
 =======
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+                    </div>
+                <div class = "box2Footer">
+                <a class = "mediaAnchor">Ship to:</a>
+                <div class = "copyrightSec">
+                    <p> © Copyright 2021, Overstock.com®, Inc.<br />799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446 </p>
+                </div>
+                <div class = "privacySec">
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
                         <a>Privacy</a>
                         <a>PolicyTerms & Conditions</a>
                         <a>*Promotion Terms</a>
                         <a>Ship to:</a>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<<< HEAD:overstack-app/src/Component/home/footer.jsx
                 </div>
@@ -122,13 +144,20 @@ export const Footer = () => {
 =======
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
                     </div>
+=======
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11
                 </div>
-            </div>
-        </div>
+                </div>
+                </div>
+                </div>
     )
+<<<<<<< HEAD
 <<<<<<< HEAD
 }    
 >>>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d:overstack-app/src/Component/footer.jsx
 =======
 }    
 >>>>>>> 8c9b4b28da9103492cf67c43599ff6aebd69da3d
+=======
+    }    
+>>>>>>> 88f3bfadf5b1733b468b6c5e7aa211fe166d4a11

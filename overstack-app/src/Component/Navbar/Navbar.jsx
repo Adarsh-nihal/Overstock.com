@@ -67,7 +67,6 @@ export default function Navbar() {
             </div>
             <div>
               <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
-              <img src="https://i.postimg.cc/tgWqzB8p/Search-1.png" alt="" />
             </div>
           </div>
           <div id="account1" className="class-account class-account-common">
@@ -102,7 +101,6 @@ export default function Navbar() {
             {/* <div>Lists</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
-              <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
             <div
               className="account-dropdown-content"
@@ -129,7 +127,6 @@ export default function Navbar() {
                 <MdNotificationsActive />
               </Link>
             </div>
-
 
             {/* <div>Cart</div> */}
           </div>
@@ -170,7 +167,7 @@ export default function Navbar() {
           ) : null}
         </div>
       </div>
-      {query.length > 0 && data.length>0 && (
+      {query.length > 0 && (
         <div
           style={{
             width: "63%",
@@ -187,7 +184,7 @@ export default function Navbar() {
             margin: "auto",
           }}
         >
-          {query.length > 0 &&
+          {query.length > 0 && data.length>0 &&
             data.map((item) => (
               <div
                 key={item.id}
