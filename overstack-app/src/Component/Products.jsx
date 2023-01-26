@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react'
 import "./Mugs.css"
 import {ChevronDownIcon,CheckCircleIcon,ChevronRightIcon,ChevronLeftIcon} from "@chakra-ui/icons"

@@ -13,6 +13,10 @@ import {
 const Cart = () => {
   const data = getData("Cart");
   const [cart, setCart] = useState(data);
+  const [discount,setDiscount]=useState(0)
+  const [sum,setSum]=useState(cart.reduce((sum, el) => {
+    return sum + el.price;
+  }, 0))
   const toast = useToast();
 
   const handleDelete = (name) => {
@@ -24,10 +28,7 @@ const Cart = () => {
       isClosable: true,
     });
   };
-  const sum = cart.reduce((sum, el) => {
-    return sum + el.price;
-  }, 0);
-  console.log(sum);
+  
 
   const handleOrder = () => {
     setCart(Success("Cart"));
@@ -115,7 +116,14 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart_main">
-          <Input placeholder="Apply Promocode" />
+          <Input placeholder="Apply Promocode" onChange={(e)=>{
+            setTimeout(()=>{
+              if(e.target.value=="ostack30"){
+                setDiscount(15)
+                setSum(sum*0.85)
+              }
+            },3000)
+          }} />
           <div className="cart_one">
             <div className="cart_two">
               Total Item
@@ -128,7 +136,7 @@ const Cart = () => {
               price <span>${parseFloat(sum.toFixed(2))}</span>{" "}
             </div>
             <div className="cart_three">
-              Discount <span>0</span>
+              Discount <span>{discount}%</span>
             </div>
             <hr />
             <div className="cart_four">

@@ -184,7 +184,7 @@ export default function Navbar() {
             margin: "auto",
           }}
         >
-          {query.length > 0 &&
+          {query.length > 0 && data.length>0 &&
             data.map((item) => (
               <div
                 key={item.id}
@@ -211,7 +211,7 @@ export default function Navbar() {
                 <div style={{ display: "flex" }}>
                   <h1>INR {item.price}</h1>
 
-                  <Link to={`/mugs/${item.id}`}>
+                  <Link to={`/products/${item.id}`}>
                     {" "}
                     <span
                       onClick={() => setData([])}
