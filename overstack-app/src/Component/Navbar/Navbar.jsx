@@ -39,7 +39,6 @@ export default function Navbar() {
   }
   },[query])
   
-
   return (
     <div>
       <div className="header">
