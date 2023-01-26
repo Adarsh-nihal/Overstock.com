@@ -167,7 +167,7 @@ export default function Navbar() {
           ) : null}
         </div>
       </div>
-      {query.length > 0 && (
+      {query.length > 0 && data.length>0 && (
         <div
           style={{
             width: "63%",
