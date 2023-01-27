@@ -1,13 +1,8 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
-import {
-  ChevronDownIcon,
-  CheckCircleIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@chakra-ui/icons";
+import { ChevronDownIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { FiHeart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -16,6 +11,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function Navbar() {
+  const defaultStyle = {
+    fontSize: "15px",
+    padding: "5px",
+  };
+  const activeStyle = {
+    fontSize: "15px",
+    padding: "5px",
+    fontWeight: "bold",
+    borderBottom: "2px solid red",
+  };
+  const adminStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    padding: "5px",
+    color: "red",
+  };
+  const adminActiveStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    color: "red",
+    padding: "5px",
+    borderBottom: "2px solid red",
+  };
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState([]);
   const { isAdmin, isAuth } = useSelector((state) => state);
@@ -29,14 +47,14 @@ export default function Navbar() {
     if (query) {
       setTimeout(() => {
         axios
-          .get(`https://stock-server.onrender.com/products?q=${query}`)
+          .get(`https://stock-server.onrender.com/products?_limit=6&q=${query}`)
           .then((r) => {
             setData(r.data);
           })
           .catch((e) => {
             console.log(e);
           });
-      }, 2000);
+      }, 5000);
     }
   }, [query]);
 
@@ -74,7 +92,6 @@ export default function Navbar() {
               {" "}
               <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
             </Link>
-            {/* <div onclick="window.location.href='signup.html'">Account</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -98,7 +115,6 @@ export default function Navbar() {
                 <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
               </Link>
             </div>
-            {/* <div>Lists</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -117,53 +133,78 @@ export default function Navbar() {
               className="Cart__Icon-Image"
               style={{ fontSize: " 25px", display: "flex", gap: "18px" }}
             >
-              {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" /> */}
               <Link to="/Cart">
                 {" "}
                 <FaShoppingCart />
               </Link>
-              <Link to="/Cart">
-                {" "}
-                <MdNotificationsActive />
-              </Link>
             </div>
-
-            {/* <div>Cart</div> */}
           </div>
           <div></div>
         </div>
         <div className="section-div">
-          <div>
-            <Link to="mug">Mugs</Link>
-          </div>
-          <div>
-            <Link to="cookingCutters">Cooking Cutters</Link>
-          </div>
-          <div>
-            <Link to="fryer">Air Fryers</Link>
-          </div>
-          <div>
-            <Link to="mixers">Mixers</Link>
-          </div>
-          <div>
-            <Link to="lamps">Lamps</Link>
-          </div>
-          <div>
-            <Link to="towels">Towels</Link>
-          </div>
-          <div>
-            <Link to="blankets">Blankets</Link>
-          </div>
-          <div>
-            <Link to="tree">Tree Skirts</Link>
-          </div>
-          <div>
-            <Link to="garland">Garlands</Link>
-          </div>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mugs"
+          >
+            Mugs
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/cutters"
+          >
+            Cutters
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/fryers"
+          >
+            Fryers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mixers"
+          >
+            Mixers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/lamps"
+          >
+            Lamps
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/towels"
+          >
+            Towels
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/blankets"
+          >
+            Blankets
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/trees"
+          >
+            Trees
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/garlands"
+          >
+            Garlands
+          </NavLink>
           {isAdmin ? (
-            <div style={{ fontWeight: "900", color: "red" }}>
-              <Link to="/admin">Admin</Link>
-            </div>
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? adminActiveStyle : adminStyle
+              }
+              to="/admin"
+            >
+              Admin
+            </NavLink>
           ) : null}
         </div>
       </div>
@@ -184,7 +225,8 @@ export default function Navbar() {
             margin: "auto",
           }}
         >
-          {query.length > 0 && data.length>0 &&
+          {query.length > 0 &&
+            data.length > 0 &&
             data.map((item) => (
               <div
                 key={item.id}
