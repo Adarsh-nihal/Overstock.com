@@ -1,4 +1,3 @@
-
 import "./Home.css";
 
 export const StaticProd = ({ prod }) => {
@@ -19,18 +18,12 @@ export const StaticProd = ({ prod }) => {
               return (
                 <>
                   <div class="categoryCard">
-                    <a
-                      href=""
-                      class="categoryCardLink"
-                      onclick="page(`Furniture`)"
-                    >
-                      <div class="categoryCardImgDiv">
-                        <img class="categoryCardImg" src={item.src} alt="" />
-                      </div>
-                      <div class="categoryCardTitleDiv">
-                        <h3 class="title-xs categoryCardTitle">{item.Title}</h3>
-                      </div>
-                    </a>
+                    <div class="categoryCardImgDiv">
+                      <img class="categoryCardImg" src={item.src} alt="" />
+                    </div>
+                    <div class="categoryCardTitleDiv">
+                      <h3 class="title-xs categoryCardTitle">{item.Title}</h3>
+                    </div>
                   </div>
                 </>
               );
