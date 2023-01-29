@@ -16,8 +16,8 @@ import { useSelector } from "react-redux";
 
 const Products = () => {
   const toast = useToast();
-  const {category}=useParams()
-  console.log(category)
+  const { category } = useParams();
+  console.log(category);
   const [page, setPage] = useState(1);
   const [order, setOrder] = useState("asc");
   const [data, setData] = useState([]);
@@ -38,9 +38,9 @@ const Products = () => {
         console.log(r.data);
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       });
-  }, [page, order,category]);
+  }, [page, order, category]);
 
   const handleDelete = (id) => {
     axios
@@ -62,12 +62,9 @@ const Products = () => {
   };
 
   function toTitleCase(str) {
-    return str.replace(
-      /\w\S*/g,
-      function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-      }
-    );
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
   }
 
   const handleHeart = (id) => {
@@ -99,18 +96,18 @@ const Products = () => {
       {loading && (
         <Flex justifyContent={"center"}>
           <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.500"
-          size="xl"
-          mt="8%"
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+            mt="8%"
           />
         </Flex>
-        
       )}
       <div className="MugsData">
-        {!loading && data.length > 0 &&
+        {!loading &&
+          data.length > 0 &&
           data.map((item) => (
             <div className="Mugs" key={item.id}>
               <div>
@@ -131,7 +128,12 @@ const Products = () => {
                 ></Icon>
               </div>
               <div>
-                <img alt="some" src={item.image} width="300px !important" height="300px !important" />{" "}
+                <img
+                  alt="some"
+                  src={item.image}
+                  width="300px !important"
+                  height="300px !important"
+                />{" "}
               </div>
               <span>Featured</span>
               <div style={{ display: "flex" }}>
@@ -147,39 +149,81 @@ const Products = () => {
               </div>
               {item.count === 2 && (
                 <Flex ml={"10px"}>
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />{" "}
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
                 </Flex>
               )}
               {item.count === 3 && (
                 <Flex ml={"10px"}>
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />{" "}
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
                 </Flex>
               )}
               {item.count === 4 && (
                 <Flex ml={"10px"}>
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />{" "}
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
                 </Flex>
               )}
               {item.count === 5 && (
                 <Flex ml={"10px"}>
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                  <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />{" "}
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
+                  <img
+                    alt="some"
+                    src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg"
+                  />
                 </Flex>
               )}
 
               <div>
                 <p>{item.name}</p>
               </div>
-              <div >
+              <div>
                 <h3>
                   {" "}
                   <CheckCircleIcon />
@@ -187,7 +231,7 @@ const Products = () => {
                 </h3>
               </div>
               {isAdmin ? (
-                <div >
+                <div>
                   <Button
                     bg={"red"}
                     width="60%"
@@ -204,22 +248,15 @@ const Products = () => {
           ))}
       </div>
 
-      
-        <div
-          style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}
-        >
-          <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
-            <ChevronLeftIcon />
-          </Button>
-          <Button bg={"lightblue"}>{page}</Button>
-          <Button
-            disabled={data.length<12}
-            onClick={() => setPage(page + 1)}
-          >
-            <ChevronRightIcon />
-          </Button>
-        </div>
-      
+      <div style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}>
+        <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
+          <ChevronLeftIcon />
+        </Button>
+        <Button bg={"lightblue"}>{page}</Button>
+        <Button disabled={data.length < 12} onClick={() => setPage(page + 1)}>
+          <ChevronRightIcon />
+        </Button>
+      </div>
     </div>
   );
 };
