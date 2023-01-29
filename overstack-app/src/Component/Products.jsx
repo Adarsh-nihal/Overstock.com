@@ -74,7 +74,7 @@ const Products = () => {
 
   return (
     <div className="Container">
-      <h1 align="center">{toTitleCase(category)}</h1>
+      <h1>{toTitleCase(category)}</h1>
       <div className="SearchBy">
         <label>SortBy:</label>
         <select
