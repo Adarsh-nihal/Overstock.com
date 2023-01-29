@@ -13,12 +13,8 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/mug" element={<Products category={"mugs"} />} />
-      <Route
-        path="/cookingCutters"
-        element={<Products category={"cutters"} />}
-      />
-      <Route path="/:category" element={<Products  />} />
+
+      <Route path="/:category" element={<Products />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route
@@ -29,9 +25,7 @@ const MainRoutes = () => {
           </PrivateRoute>
         }
       />
-
       {/* Admin Pages */}
-
       <Route
         path="/admin"
         element={
@@ -40,9 +34,7 @@ const MainRoutes = () => {
           </AdminPrivate>
         }
       />
-
       {/*  single pages with private Route */}
-
       <Route path="/products/:id" element={<SingleProduct />} />
     </Routes>
   );

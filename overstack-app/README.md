@@ -9,7 +9,7 @@ whole website that we have created are responsive as well.
 
 
 ## 🔗 Links
-netlify link - https://overstack-app-adarsh-nihal.vercel.app/
+netlify link - https://overstack-pi.netlify.app/
 
 github - https://github.com/Adarsh-nihal/-utopian-cover-8281
 

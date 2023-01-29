@@ -2,12 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
-import {
-  ChevronDownIcon,
-  CheckCircleIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@chakra-ui/icons";
+import { ChevronDownIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { FiHeart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -39,7 +34,6 @@ export default function Navbar() {
     padding: "5px",
     borderBottom: "2px solid red",
   };
-
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState([]);
   const { isAdmin, isAuth } = useSelector((state) => state);
@@ -53,14 +47,14 @@ export default function Navbar() {
     if (query) {
       setTimeout(() => {
         axios
-          .get(`https://stock-server.onrender.com/products?q=${query}`)
+          .get(`https://stock-server.onrender.com/products?_limit=6&q=${query}`)
           .then((r) => {
             setData(r.data);
           })
           .catch((e) => {
             console.log(e);
           });
-      }, 2000);
+      }, 5000);
     }
   }, [query]);
 
@@ -98,7 +92,6 @@ export default function Navbar() {
               {" "}
               <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
             </Link>
-            {/* <div onclick="window.location.href='signup.html'">Account</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -122,7 +115,6 @@ export default function Navbar() {
                 <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
               </Link>
             </div>
-            {/* <div>Lists</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -141,18 +133,11 @@ export default function Navbar() {
               className="Cart__Icon-Image"
               style={{ fontSize: " 25px", display: "flex", gap: "18px" }}
             >
-              {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" /> */}
               <Link to="/Cart">
                 {" "}
                 <FaShoppingCart />
               </Link>
-              <Link to="/Cart">
-                {" "}
-                <MdNotificationsActive />
-              </Link>
             </div>
-
-            {/* <div>Cart</div> */}
           </div>
           <div></div>
         </div>

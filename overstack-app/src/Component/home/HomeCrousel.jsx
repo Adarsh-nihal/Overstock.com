@@ -1,51 +1,50 @@
-
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import React, { useEffect,useState } from "react";
 import "./Home.css";
-import {  useMediaQuery } from "@chakra-ui/react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export const ImageSlider = ({ imagess }) => {
-
- const [count,setCount]=useState(4)
-
- function SlideCount(){
-  if(useMediaQuery(`(media(min-width:900px))`)){
-    return 4
-   }
-   else{
-    return 2
-   }
- }
-
- 
-
-  const settings = {
-    infinite: true,
-    dots: true,
-    slidesToShow: SlideCount(),
-    slidesToScroll: 1,
-    lazyLoad: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: true,
-    focusOnSelect: true,
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1024 },
+      items: 4,
+      slidesToSlide: 1,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 800 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    tablet: {
+      breakpoint: { max: 800, min: 464 },
+      items: 2,
+      slidesToSlide: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
+
   return (
-    <>
+    <div>
       <div className="tag">
         <div className="limitedtimeHeadingDiv">
           <h2 className="limitedtimeHeading">Savings to Bring in the Season</h2>
         </div>
       </div>
-      <div className="imgslider">
-        <Slider {...settings}>
+      <div align="center" className="imgslider">
+        <Carousel
+          responsive={responsive}
+          showDots={true}
+          autoPlay={true}
+          autoPlaySpeed={2000}
+          rewind={true}
+          rewindWithAnimation={true}
+        >
           {imagess.map((item) => (
             <div key={item.id} className="slider_info">
               <div>
-                <img src={item.src} alt={item.alt} />
+                <img src={item.src} alt={item.alt} className="slider-img" />
               </div>
               <div className="slides">
                 <h3 className="">{item.heading}</h3>
@@ -53,8 +52,8 @@ export const ImageSlider = ({ imagess }) => {
               </div>
             </div>
           ))}
-        </Slider>
+        </Carousel>
       </div>
-    </>
+    </div>
   );
 };
