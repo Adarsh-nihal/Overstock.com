@@ -18,13 +18,7 @@ const MainRoutes = () => {
         path="/cookingCutters"
         element={<Products category={"cutters"} />}
       />
-      <Route path="/mixers" element={<Products category={"mixers"} />} />
-      <Route path="/fryer" element={<Products category={"fryers"} />} />
-      <Route path="/lamps" element={<Products category={"lamps"} />} />
-      <Route path="/towels" element={<Products category={"towels"} />} />
-      <Route path="/blankets" element={<Products category={"blankets"} />} />
-      <Route path="/tree" element={<Products category={"tree"} />}></Route>
-      <Route path="/garland" element={<Products category={"garland"} />} />
+      <Route path="/:category" element={<Products  />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route

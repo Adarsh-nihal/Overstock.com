@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import {
   ChevronDownIcon,
@@ -16,6 +16,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function Navbar() {
+  const defaultStyle = {
+    fontSize: "15px",
+    padding: "5px",
+  };
+  const activeStyle = {
+    fontSize: "15px",
+    padding: "5px",
+    fontWeight: "bold",
+    borderBottom: "2px solid red",
+  };
+  const adminStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    padding: "5px",
+    color: "red",
+  };
+  const adminActiveStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    color: "red",
+    padding: "5px",
+    borderBottom: "2px solid red",
+  };
+
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState([]);
   const { isAdmin, isAuth } = useSelector((state) => state);
@@ -133,37 +157,69 @@ export default function Navbar() {
           <div></div>
         </div>
         <div className="section-div">
-          <div>
-            <Link to="mug">Mugs</Link>
-          </div>
-          <div>
-            <Link to="cookingCutters">Cooking Cutters</Link>
-          </div>
-          <div>
-            <Link to="fryer">Air Fryers</Link>
-          </div>
-          <div>
-            <Link to="mixers">Mixers</Link>
-          </div>
-          <div>
-            <Link to="lamps">Lamps</Link>
-          </div>
-          <div>
-            <Link to="towels">Towels</Link>
-          </div>
-          <div>
-            <Link to="blankets">Blankets</Link>
-          </div>
-          <div>
-            <Link to="tree">Tree Skirts</Link>
-          </div>
-          <div>
-            <Link to="garland">Garlands</Link>
-          </div>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mugs"
+          >
+            Mugs
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/cutters"
+          >
+            Cutters
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/fryers"
+          >
+            Fryers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mixers"
+          >
+            Mixers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/lamps"
+          >
+            Lamps
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/towels"
+          >
+            Towels
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/blankets"
+          >
+            Blankets
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/trees"
+          >
+            Trees
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/garlands"
+          >
+            Garlands
+          </NavLink>
           {isAdmin ? (
-            <div style={{ fontWeight: "900", color: "red" }}>
-              <Link to="/admin">Admin</Link>
-            </div>
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? adminActiveStyle : adminStyle
+              }
+              to="/admin"
+            >
+              Admin
+            </NavLink>
           ) : null}
         </div>
       </div>
@@ -184,7 +240,8 @@ export default function Navbar() {
             margin: "auto",
           }}
         >
-          {query.length > 0 && data.length>0 &&
+          {query.length > 0 &&
+            data.length > 0 &&
             data.map((item) => (
               <div
                 key={item.id}
